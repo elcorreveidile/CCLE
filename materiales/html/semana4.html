@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 4</title>
+    <style>
+/* Estilos profesionales para PDFs del Curso Intensivo de Español */
+
+@page {
+    margin: 2cm;
+    size: A4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #333;
+    background: white;
+    max-width: 100%;
+}
+
+/* Encabezados */
+h1 {
+    color: #1a4d8f;
+    font-size: 28pt;
+    font-weight: bold;
+    margin: 0 0 10pt 0;
+    padding: 15pt 0 10pt 0;
+    border-bottom: 3pt solid #f39c12;
+    page-break-after: avoid;
+}
+
+h2 {
+    color: #2c5f8d;
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 20pt 0 8pt 0;
+    padding-top: 10pt;
+    border-bottom: 1.5pt solid #e8e8e8;
+    page-break-after: avoid;
+}
+
+h3 {
+    color: #34495e;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 15pt 0 8pt 0;
+    page-break-after: avoid;
+}
+
+h4 {
+    color: #555;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 12pt 0 6pt 0;
+    page-break-after: avoid;
+}
+
+/* Párrafos y texto */
+p {
+    margin: 8pt 0;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+}
+
+/* Listas */
+ul, ol {
+    margin: 10pt 0;
+    padding-left: 25pt;
+}
+
+li {
+    margin: 5pt 0;
+    line-height: 1.5;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+ul ul li {
+    list-style-type: circle;
+}
+
+/* Listas dentro de secciones específicas */
+h4 + ul, h4 + ol {
+    margin-top: 8pt;
+}
+
+/* Texto en negrita y cursiva */
+strong, b {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+em, i {
+    font-style: italic;
+    color: #555;
+}
+
+/* Código y texto monoespaciado */
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 2pt 4pt;
+    border-radius: 3pt;
+    font-size: 10pt;
+    color: #c7254e;
+}
+
+pre {
+    background-color: #f8f8f8;
+    border: 1pt solid #ddd;
+    border-left: 4pt solid #3498db;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    overflow-x: auto;
+    page-break-inside: avoid;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #333;
+    font-size: 9pt;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15pt 0;
+    page-break-inside: avoid;
+}
+
+th, td {
+    border: 1pt solid #ddd;
+    padding: 8pt 12pt;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Cajas especiales para diálogos */
+h4:contains("Diálogo") {
+    color: #27ae60;
+    border-left: 4pt solid #27ae60;
+    padding-left: 10pt;
+}
+
+/* Separadores */
+hr {
+    border: none;
+    border-top: 2pt solid #e8e8e8;
+    margin: 20pt 0;
+}
+
+/* Secciones específicas */
+.objetivos, .contenido-gramatical, .vocabulario, .ejercicios {
+    background-color: #f9f9f9;
+    padding: 12pt;
+    border-radius: 4pt;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+}
+
+/* Cajas de información */
+.info-box {
+    background-color: #e3f2fd;
+    border-left: 4pt solid #2196f3;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+.warning-box {
+    background-color: #fff3e0;
+    border-left: 4pt solid #ff9800;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+/* Ejemplos */
+blockquote {
+    border-left: 4pt solid #9b59b6;
+    padding-left: 15pt;
+    margin: 12pt 0 12pt 20pt;
+    font-style: italic;
+    color: #555;
+    background-color: #f8f5fb;
+    padding: 10pt 10pt 10pt 15pt;
+    border-radius: 4pt;
+}
+
+/* Evitar quiebres de página en lugares inapropiados */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+}
+
+/* Footer y header para todas las páginas */
+@page {
+    @top-right {
+        content: "Curso Intensivo de Español - CILE";
+        font-size: 9pt;
+        color: #999;
+    }
+    @bottom-center {
+        content: "Página " counter(page);
+        font-size: 9pt;
+        color: #999;
+    }
+}
+
+/* Enlaces */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mejoras de impresión */
+@media print {
+    body {
+        font-size: 10pt;
+    }
+
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 16pt;
+    }
+
+    h3 {
+        font-size: 13pt;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+}
+
+    </style>
+    <script>
+        // Función para imprimir/guardar como PDF
+        function printPDF() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <div class="no-print" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <button onclick="printPDF()" style="
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        ">
+            📄 Guardar como PDF
+        </button>
+    </div>
+
+    <div class="content">
+<h1>Semana 4: Consolidación y Proyectos</h1>
+<h2>Nivel A2.1 - Integración de Contenidos y Evaluación Final</h2>
+<h3>Objetivos de la semana</h3>
+<ul>
+<li>Consolidar todos los tiempos verbales estudiados</li>
+<li>Integrar vocabulario y estructuras gramaticales</li>
+<li>Realizar proyectos prácticos en español</li>
+<li>Prepararse para la evaluación final</li>
+<li>Aplicar conocimientos en situaciones reales</li>
+</ul>
+<h3>Repaso General de Contenidos</h3>
+<h4>1. Consolidación de Tiempos Verbales</h4>
+<p><strong>Presente de Indicativo</strong>
+</p>
+<ul>
+<li>Situaciones actuales y rutinas</li>
+<li><em>Me llamo Ana y estudio español. Vivo en Madrid y trabajo en una empresa.</em></li>
+</ul>
+<p><strong>Pretérito Perfecto Simple</strong>
+</p>
+<ul>
+<li>Acciones pasadas completas y puntuales</li>
+<li><em>Ayer fui al mercado. Compré frutas y verduras. Anoche cené con amigos.</em></li>
+</ul>
+<p><strong>Pretérito Imperfecto</strong>
+</p>
+<ul>
+<li>Descripciones, hábitos pasados y acciones simultáneas</li>
+<li><em>Cuando era niño, vivía en una ciudad pequeña. Siempre jugaba en el parque.</em></li>
+</ul>
+<p><strong>Futuro Simple e "Ir a" + Infinitivo</strong>
+</p>
+<ul>
+<li>Planes, predicciones y decisiones futuras</li>
+<li><em>El próximo año viajaré a España. Voy a estudiar más español.</em></li>
+</ul>
+<h4>2. Comparativos y Superlativos</h4>
+<p><strong>Comparativos de Igualdad:</strong>
+</p>
+<ul>
+<li><strong>tan + adjetivo + como</strong>: <em>Tan alto como</em></li>
+<li><strong>tanto + sustantivo + como</strong>: <em>Tanto dinero como</em></li>
+</ul>
+<p><strong>Comparativos de Superioridad:</strong>
+</p>
+<ul>
+<li><strong>más + adjetivo + que</strong>: <em>Más interesante que</em></li>
+<li><strong>más + sustantivo + que</strong>: <em>Más libros que</em></li>
+</ul>
+<p><strong>Comparativos de Inferioridad:</strong>
+</p>
+<ul>
+<li><strong>menos + adjetivo + que</strong>: <em>Menos caro que</em></li>
+<li><strong>menos + sustantivo + que</strong>: <em>Menos tiempo que</em></li>
+</ul>
+<p><strong>Superlativos:</strong>
+</p>
+<ul>
+<li><strong>el/la/los/las + más + adjetivo</strong>: <em>El más alto</em></li>
+<li><strong>el/la/los/las + menos + adjetivo</strong>: <em>La menos cara</em></li>
+</ul>
+<p><strong>Irregulares comunes:</strong>
+</p>
+<ul>
+<li><strong>buen → mejor</strong>: <em>Mejor que</em> → <em>el mejor</em></li>
+<li><strong>mal → peor</strong>: <em>Peor que</em> → <em>el peor</em></li>
+<li><strong>grande → mayor</strong>: <em>Mayor que</em> → <em>el mayor</em></li>
+<li><strong>pequeño → menor</strong>: <em>Menor que</em> → <em>el menor</em></li>
+</ul>
+<h4>3. Expresiones de Causa y Consecuencia</h4>
+<p><strong>Causa:</strong>
+</p>
+<ul>
+<li><strong>porque</strong>: <em>Estudio porque quiero trabajar</em></li>
+<li><strong>ya que</strong>: <em>No voy a la fiesta, ya que estoy cansado</em></li>
+<li><strong>puesto que</strong>: <em>No puedo ayudarte, puesto que tengo mucho trabajo</em></li>
+<li><strong>debido a</strong>: <em>Llegué tarde debido al tráfico</em></li>
+</ul>
+<p><strong>Consecuencia:</strong>
+</p>
+<ul>
+<li><strong>por eso</strong>: <em>Estudio mucho, por eso apruebo</em></li>
+<li><strong>así que</strong>: <em>Hace frío, así que llevo abrigo</em></li>
+<li><strong>por lo tanto</strong>: <em>Es caro, por lo tanto no lo compro</em></li>
+<li><strong>entonces</strong>: <em>Estudio español, entonces puedo comunicarme</em></li>
+</ul>
+<h4>4. Preposiciones de Lugar y Tiempo</h4>
+<p><strong>Lugar:</strong>
+</p>
+<ul>
+<li><strong>en</strong>: en Madrid, en la casa, en el parque</li>
+<li><strong>a</strong>: a la escuela, al mercado, al cine</li>
+<li><strong>de</strong>: de China, del supermercado, del trabajo</li>
+<li><strong>con</strong>: con amigos, con mi familia</li>
+<li><strong>sin</strong>: sin dinero, sin problemas</li>
+<li><strong>por</strong>: por el centro, por la mañana</li>
+<li><strong>para</strong>: para estudiar, para ti</li>
+</ul>
+<p><strong>Tiempo:</strong>
+</p>
+<ul>
+<li><strong>a las</strong>: a las 8:00, a las 10:30</li>
+<li><strong>el/la</strong>: el lunes, la semana pasada</li>
+<li><strong>en</strong>: en enero, en 2024, en invierno</li>
+<li><strong>durante</strong>: durante la clase, dos horas</li>
+<li><strong>desde</strong>: desde lunes, desde 2020</li>
+<li><strong>hasta</strong>: hasta el viernes, hasta tarde</li>
+</ul>
+<h3>Vocabulario de Repaso por Temas</h3>
+<h4>La Vida Cotidiana</h4>
+<ul>
+<li><strong>Rutinas</strong>: levantarse, ducharse, desayunar, trabajar, estudiar, descansar</li>
+<li><strong>Hogar</strong>: casa, habitación, cocina, baño, salón</li>
+<li><strong>Comida</strong>: desayuno, almuerzo, cena, ingredientes, recetas</li>
+<li><strong>Transporte</strong>: coche, autobús, metro, bicicleta, caminar</li>
+</ul>
+<h4>Relaciones Personales</h4>
+<ul>
+<li><strong>Familia</strong>: padres, hermanos, hijos, abuelos, primos</li>
+<li><strong>Amistad</strong>: amigos, conocidos, compañeros, socios</li>
+<li><strong>Trabajo</strong>: colegas, jefe, empleados, clientes</li>
+<li><strong>Estudios</strong>: profesores, compañeros, alumnos, directores</li>
+</ul>
+<h4>Actividades y Pasatiempos</h4>
+<ul>
+<li><strong>Deportes</strong>: fútbol, tenis, natación, correr, yoga</li>
+<li><strong>Arte</strong>: música, pintura, danza, teatro, fotografía</li>
+<li><strong>Cultura</strong>: cine, literatura, museos, conciertos</li>
+<li><strong>Tecnología</strong>: internet, redes sociales, videojuegos, aplicaciones</li>
+</ul>
+<h4>Experiencias y Viajes</h4>
+<ul>
+<li><strong>Destinos</strong>: países, ciudades, monumentos, playas, montañas</li>
+<li><strong>Alojamiento</strong>: hotel, apartamento, hostal, camping</li>
+<li><strong>Transporte</strong>: avión, tren, coche, barco</li>
+<li><strong>Actividades</strong>: turismo, compras, restaurant, museos</li>
+</ul>
+<h3>Proyecto Final: Presentación Personal</h3>
+<h4>Estructura de la Presentación (5-7 minutos)</h4>
+<p><strong>1. Introducción (1 minuto)</strong>
+</p>
+<ul>
+<li>Nombre y origen</li>
+<li>Profesión o estudios actuales</li>
+<li>Por qué estudias español</li>
+</ul>
+<p><strong>2. Mi Vida Antes (2 minutos)</strong>
+</p>
+<ul>
+<li>Dónde vivías y qué hacías</li>
+<li>Experiencias importantes</li>
+<li>Cómo era tu rutina</li>
+</ul>
+<p><strong>3. Mi Presente (2 minutos)</strong>
+</p>
+<ul>
+<li>Tu vida actual</li>
+<li>Rutinas diarias</li>
+<li>Gustos y preferencias</li>
+</ul>
+<p><strong>4. Mis Planes Futuros (1-2 minutos)</strong>
+</p>
+<ul>
+<li>Qué quieres hacer después del curso</li>
+<li>Metas personales y profesionales</li>
+<li>Cómo te ayudará el español</li>
+</ul>
+<p><strong>5. Conclusión (30 segundos)</strong>
+</p>
+<ul>
+<li>Agradecimiento</li>
+<li>Mensaje final</li>
+</ul>
+<h4>Criterios de Evaluación</h4>
+<ul>
+<li><strong>Contenido</strong>: información completa y relevante (30%)</li>
+<li><strong>Gramática</strong>: uso correcto de tiempos verbales (25%)</li>
+<li><strong>Vocabulario</strong>: variedad y precisión (20%)</li>
+<li><strong>Pronunciación</strong>: claridad y fluidez (15%)</li>
+<li><strong>Presentación</strong>: estructura y organización (10%)</li>
+</ul>
+<h3>Situaciones Prácticas para Repaso</h3>
+<h4>Situación 1: En el Restaurante</h4>
+<p><strong>Diálogo modelo:</strong>
+</p>
+<ul>
+<li><em>Buenos días, mesa para dos personas</em></li>
+<li><em>¿Qué van a tomar?</em></li>
+<li><em>Quiero el menú del día</em></li>
+<li><em>¿De primero quiere sopa o ensalada?</em></li>
+<li><em>De segundo, quiero pollo con patatas</em></li>
+<li><em>¿Y de beber?</em></li>
+<li><em>Agua mineral, por favor</em></li>
+<li><em>¿Algo de postre?</em></li>
+<li><em>Sí, quiero flan</em></li>
+<li><em>¿La cuenta, por favor?</em></li>
+</ul>
+<h4>Situación 2: En la Tienda</h4>
+<p><strong>Diálogo modelo:</strong>
+</p>
+<ul>
+<li><em>Hola, ¿puedo ayudarle?</em></li>
+<li><em>Busco un regalo para mi amigo</em></li>
+<li><em>¿Qué edad tiene?</em></li>
+<li><em>Tiene 25 años</em></li>
+<li><em>¿Qué le gusta hacer?</em></li>
+<li><em>Le gusta leer</em></li>
+<li><em>Tenemos libros muy interesantes</em></li>
+<li><em>¿Cuánto cuesta este?</em></li>
+<li><em>Cuesta 15 euros</em></li>
+<li><em>Perfecto, lo tomo</em></li>
+</ul>
+<h4>Situación 3: Pidiendo Direcciones</h4>
+<p><strong>Diálogo modelo:</strong>
+</p>
+<ul>
+<li><em>Perdone, ¿podría ayudarme?</em></li>
+<li><em>Claro, ¿qué necesita?</em></li>
+<li><em>Busco la estación de metro</em></li>
+<li><em>Siga recto hasta el final</em></li>
+<li><em>Luego gire a la derecha</em></li>
+<li><em>¿Está lejos?</em></li>
+<li><strong>No, a unos 5 minutos caminando</strong></li>
+<li><em>Muchas gracias</em></li>
+<li><em>De nada, que tenga buen día</em></li>
+</ul>
+<h3>Ejercicios de Repaso General</h3>
+<h4>Ejercicio 1: Texto Completo con Todos los Tiempos</h4>
+<p>Completa el texto con la forma verbal correcta:
+</p>
+<p>"Me llamo Li y (1)________ (ser) de China. Ahora (2)________ (vivir) en Madrid y (3)________ (estudiar) español.
+</p>
+<p>Cuando (4)________ (ser) niño, (5)________ (vivir) en Shangghai con mis padres. (6)________ (ir) a una escuela muy buena y siempre (7)________ (sacar) buenas notas. Mi padre (8)________ (trabajar) en una empresa internacional y mi madre (9)________ (ser) profesora.
+</p>
+<p>El año pasado (10)________ (decidir) venir a España para mejorar mi español. (11)________ (llegar) aquí en septiembre y (12)________ (empezar) este curso en octubre.
+</p>
+<p>Mi rutina ahora es diferente. (13)________ (levantarse) a las 7:00, (14)________ (desayunar) y (15)________ (ir) a clase. Por la tarde (16)________ (estudiar) en la biblioteca.
+</p>
+<p>En el futuro, (17)________ (querer) trabajar en una empresa española. También (18)________ (ir a) viajar por América Latina para conocer diferentes culturas hispanas. (19)________ (ser) una experiencia fantástica."
+</p>
+<h4>Ejercicio 2: Situaciones Prácticas</h4>
+<p>Escribe mini-diálogos para estas situaciones:
+<br>1. Pidiendo información en una tienda de ropa
+<br>2. Haciendo una reserva en un restaurante
+<br>3. Preguntando por un libro en la biblioteca
+<br>4. Explicando un problema con el wifi
+<br>5. Invitando a un amigo al cine
+</p>
+<h4>Ejercicio 3: Redacción Integrada</h4>
+<p>Escribe un párrafo (100-150 palabras) sobre:
+</p>
+<ul>
+<li>"Mi experiencia aprendiendo español"</li>
+</ul>
+<p>Usa al menos:
+</p>
+<ul>
+<li>3 tiempos verbales diferentes</li>
+<li>2 comparativos</li>
+<li>2 conectores temporales</li>
+<li>5 expresiones de causa/consecuencia</li>
+</ul>
+<h3>Preparación para la Evaluación Final</h3>
+<h4>Componentes de la Evaluación</h4>
+<p>1. <strong>Comprensión Oral</strong> (20%)
+</p>
+<ul>
+<li>Audio con conversaciones cotidianas</li>
+<li>Preguntas de comprensión</li>
+</ul>
+<p>2. <strong>Expresión Oral</strong> (30%)
+</p>
+<ul>
+<li>Presentación personal del proyecto</li>
+<li>Conversación espontánea con el profesor</li>
+</ul>
+<p>3. <strong>Comprensión Escrita</strong> (20%)
+</p>
+<ul>
+<li>Texto adaptado sobre cultura hispana</li>
+<li>Preguntas de comprensión</li>
+</ul>
+<p>4. <strong>Expresión Escrita</strong> (30%)
+</p>
+<ul>
+<li>Redacción de 150-200 palabras</li>
+<li>Tema: "Mi plan para usar el español en el futuro"</li>
+</ul>
+<h4>Consejos para el Éxito</h4>
+<ul>
+<li><strong>Practica todos los días</strong>: aunque sean 15 minutos</li>
+<li><strong>Grábate hablando</strong>: escucha y mejora tu pronunciación</li>
+<li><strong>Lee en voz alto</strong>: mejora fluidez y entonación</li>
+<li><strong>Usa el vocabulario nuevo</strong>: intenta incorporar palabras aprendidas</li>
+<li><strong>Habla sin miedo</strong>: cometer errores es parte del aprendizaje</li>
+</ul>
+<h3>Nota Importante sobre el Horario</h3>
+<p><strong>Los viernes no hay clases</strong> - Este tiempo está diseñado para:
+</p>
+<ul>
+<li>Estudio personal y repaso autónomo</li>
+<li>Práctica con los recursos online del curso</li>
+<li>Preparación del proyecto final</li>
+<li>Conversación con compañeros fuera del aula</li>
+</ul>
+<h3>Recursos Adicionales</h3>
+<ul>
+<li><strong>Apps</strong>: Duolingo, Babbel, Memrise</li>
+<li><strong>YouTube</strong>: Canales para aprender español</li>
+<li><strong>Podcasts</strong>: Radio en español para principiantes</li>
+<li><strong>Libros</strong>: Lecturas graduadas nivel A2</li>
+<li><strong>Series</strong>: Netflix con audio en español</li>
+</ul>
+<h3>Actividad de Despedida</h3>
+<p><strong>Círculo de Compartir:</strong>
+</p>
+<ul>
+<li>Comparte tu experiencia en el curso</li>
+<li>Qué fue lo más difícil</li>
+<li>Qué fue lo más fácil</li>
+<li>Qué te gustaría aprender después</li>
+<li>Consejos para futuros estudiantes</li>
+</ul>
+<hr>
+<p><strong>¡Felicidades por completar el curso Intensivo 3!</strong>
+<br><strong>¡Sigue practicando y nunca pares de aprender español! 🎉</strong>
+</p>
+    </div>
+</body>
+</html>

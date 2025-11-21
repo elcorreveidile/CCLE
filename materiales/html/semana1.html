@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 1</title>
+    <style>
+/* Estilos profesionales para PDFs del Curso Intensivo de Español */
+
+@page {
+    margin: 2cm;
+    size: A4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #333;
+    background: white;
+    max-width: 100%;
+}
+
+/* Encabezados */
+h1 {
+    color: #1a4d8f;
+    font-size: 28pt;
+    font-weight: bold;
+    margin: 0 0 10pt 0;
+    padding: 15pt 0 10pt 0;
+    border-bottom: 3pt solid #f39c12;
+    page-break-after: avoid;
+}
+
+h2 {
+    color: #2c5f8d;
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 20pt 0 8pt 0;
+    padding-top: 10pt;
+    border-bottom: 1.5pt solid #e8e8e8;
+    page-break-after: avoid;
+}
+
+h3 {
+    color: #34495e;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 15pt 0 8pt 0;
+    page-break-after: avoid;
+}
+
+h4 {
+    color: #555;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 12pt 0 6pt 0;
+    page-break-after: avoid;
+}
+
+/* Párrafos y texto */
+p {
+    margin: 8pt 0;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+}
+
+/* Listas */
+ul, ol {
+    margin: 10pt 0;
+    padding-left: 25pt;
+}
+
+li {
+    margin: 5pt 0;
+    line-height: 1.5;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+ul ul li {
+    list-style-type: circle;
+}
+
+/* Listas dentro de secciones específicas */
+h4 + ul, h4 + ol {
+    margin-top: 8pt;
+}
+
+/* Texto en negrita y cursiva */
+strong, b {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+em, i {
+    font-style: italic;
+    color: #555;
+}
+
+/* Código y texto monoespaciado */
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 2pt 4pt;
+    border-radius: 3pt;
+    font-size: 10pt;
+    color: #c7254e;
+}
+
+pre {
+    background-color: #f8f8f8;
+    border: 1pt solid #ddd;
+    border-left: 4pt solid #3498db;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    overflow-x: auto;
+    page-break-inside: avoid;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #333;
+    font-size: 9pt;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15pt 0;
+    page-break-inside: avoid;
+}
+
+th, td {
+    border: 1pt solid #ddd;
+    padding: 8pt 12pt;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Cajas especiales para diálogos */
+h4:contains("Diálogo") {
+    color: #27ae60;
+    border-left: 4pt solid #27ae60;
+    padding-left: 10pt;
+}
+
+/* Separadores */
+hr {
+    border: none;
+    border-top: 2pt solid #e8e8e8;
+    margin: 20pt 0;
+}
+
+/* Secciones específicas */
+.objetivos, .contenido-gramatical, .vocabulario, .ejercicios {
+    background-color: #f9f9f9;
+    padding: 12pt;
+    border-radius: 4pt;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+}
+
+/* Cajas de información */
+.info-box {
+    background-color: #e3f2fd;
+    border-left: 4pt solid #2196f3;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+.warning-box {
+    background-color: #fff3e0;
+    border-left: 4pt solid #ff9800;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+/* Ejemplos */
+blockquote {
+    border-left: 4pt solid #9b59b6;
+    padding-left: 15pt;
+    margin: 12pt 0 12pt 20pt;
+    font-style: italic;
+    color: #555;
+    background-color: #f8f5fb;
+    padding: 10pt 10pt 10pt 15pt;
+    border-radius: 4pt;
+}
+
+/* Evitar quiebres de página en lugares inapropiados */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+}
+
+/* Footer y header para todas las páginas */
+@page {
+    @top-right {
+        content: "Curso Intensivo de Español - CILE";
+        font-size: 9pt;
+        color: #999;
+    }
+    @bottom-center {
+        content: "Página " counter(page);
+        font-size: 9pt;
+        color: #999;
+    }
+}
+
+/* Enlaces */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mejoras de impresión */
+@media print {
+    body {
+        font-size: 10pt;
+    }
+
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 16pt;
+    }
+
+    h3 {
+        font-size: 13pt;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+}
+
+    </style>
+    <script>
+        // Función para imprimir/guardar como PDF
+        function printPDF() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <div class="no-print" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <button onclick="printPDF()" style="
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        ">
+            📄 Guardar como PDF
+        </button>
+    </div>
+
+    <div class="content">
+<h1>Semana 1: Fundamentos Básicos</h1>
+<h2>Nivel A2.1 - Presentaciones, Rutinas y Descripciones Simples</h2>
+<h3>Objetivos de la semana</h3>
+<ul>
+<li>Presentarse y presentarse a otros</li>
+<li>Describir personas y lugares</li>
+<li>Hablar de rutinas diarias básicas</li>
+<li>Usar el presente de indicativo correctamente</li>
+<li>Entender y usar expresiones de cortesía</li>
+</ul>
+<h3>Contenido Gramatical</h3>
+<h4>1. Presente de Indicativo - Verbos Regulares</h4>
+<p><strong>AR verbos (hablar, estudiar, trabajar)</strong>
+</p>
+<ul>
+<li>Yo hablo español</li>
+<li>Tú hablas español</li>
+<li>Él/ella/usted habla español</li>
+<li>Nosotros/as hablamos español</li>
+<li>Vosotros/as habláis español</li>
+<li>Ellos/ellas/ustedes hablan español</li>
+</ul>
+<p><strong>ER verbos (comer, aprender, vivir)</strong>
+</p>
+<ul>
+<li>Yo como en casa</li>
+<li>Tú comes en casa</li>
+<li>Él/ella/usted come en casa</li>
+<li>Nosotros/as comemos en casa</li>
+<li>Vosotros/as coméis en casa</li>
+<li>Ellos/ellas/ustedes comen en casa</li>
+</ul>
+<p><strong>IR verbos (vivir, escribir, abrir)</strong>
+</p>
+<ul>
+<li>Yo vivo en Madrid</li>
+<li>Tú vives en Madrid</li>
+<li>Él/ella/usted vive en Madrid</li>
+<li>Nosotros/as vivimos en Madrid</li>
+<li>Vosotros/as vivís en Madrid</li>
+<li>Ellos/ellas/ustedes viven en Madrid</li>
+</ul>
+<h4>2. Verbos Irregulares Más Comunes</h4>
+<p><strong>SER</strong>
+</p>
+<ul>
+<li>Yo soy estudiante</li>
+<li>Tú eres de China</li>
+<li>Él es profesor</li>
+<li>Nosotros somos amigos</li>
+<li>Vosotros sois de aquí</li>
+<li>Ellos son médicos</li>
+</ul>
+<p><strong>ESTAR</strong>
+</p>
+<ul>
+<li>Yo estoy en clase</li>
+<li>Tú estás cansado</li>
+<li>Ella está contenta</li>
+<li>Nosotros estamos juntos</li>
+<li>Vosotros estáis en casa</li>
+<li>Ellos están ocupados</li>
+</ul>
+<p><strong>TENER</strong>
+</p>
+<ul>
+<li>Yo tengo 25 años</li>
+<li>Tú tienes un coche</li>
+<li>Él tiene dos hermanos</li>
+<li>Nosotros tenemos tiempo</li>
+<li>Vosotros tenéis preguntas</li>
+<li>Ellos tienen suerte</li>
+</ul>
+<p><strong>IR</strong>
+</p>
+<ul>
+<li>Yo voy al mercado</li>
+<li>Tú vas a la escuela</li>
+<li>Ella va al trabajo</li>
+<li>Nosotros vamos al cine</li>
+<li>Vosotros vais al parque</li>
+<li>Ellos van de vacaciones</li>
+</ul>
+<h4>3. Artículos</h4>
+<p><strong>Determinados (el, la, los, las)</strong>
+</p>
+<ul>
+<li>el libro (los libros)</li>
+<li>la mesa (las mesas)</li>
+</ul>
+<p><strong>Indeterminados (un, una, unos, unas)</strong>
+</p>
+<ul>
+<li>un coche (unos coches)</li>
+<li>una casa (unas casas)</li>
+</ul>
+<h3>Vocabulario Esencial</h3>
+<h4>Familia y Personas</h4>
+<ul>
+<li>el padre, la madre, los padres</li>
+<li>el hermano, la hermana, los hermanos</li>
+<li>el abuelo, la abuela, los abuelos</li>
+<li>el esposo, la esposa, los esposos</li>
+<li>el hijo, la hija, los hijos</li>
+<li>el amigo, la amiga, los amigos</li>
+</ul>
+<h4>Profesiones</h4>
+<ul>
+<li>el/la estudiante</li>
+<li>el/la profesor/a</li>
+<li>el/la médico/a</li>
+<li>el/la ingeniero/a</li>
+<li>el/la trabajador/a</li>
+<li>el/la empresario/a</li>
+</ul>
+<h4>Lugares</h4>
+<ul>
+<li>la casa, el apartamento</li>
+<li>la escuela, la universidad</li>
+<li>el hospital, el mercado</li>
+<li>el restaurante, el café</li>
+<li>el parque, la playa</li>
+<li>la biblioteca, el museo</li>
+</ul>
+<h4>Adjetivos de Descripción</h4>
+<ul>
+<li>alto/a, bajo/a</li>
+<li>joven, mayor</li>
+<li>guapo/a, bonito/a</li>
+<li>inteligente, estudioso/a</li>
+<li>simpático/a, amable</li>
+<li>trabajador/a, perezoso/a</li>
+</ul>
+<h3>Expresiones Útiles</h3>
+<h4>Saludos y Despedidas</h4>
+<ul>
+<li>Buenos días/tardes/noches</li>
+<li>¿Cómo estás? - Muy bien, gracias</li>
+<li>Encantado/a de conocerte</li>
+<li>Hasta luego/pronto/mañana</li>
+<li>Adiós</li>
+</ul>
+<h4>Presentaciones</h4>
+<ul>
+<li>Me llamo... / Mi nombre es...</li>
+<li>Soy de... / Vengo de...</li>
+<li>Tengo... años</li>
+<li>Vivo en...</li>
+<li>Estudio... / Trabajo en...</li>
+</ul>
+<h4>Funciones Comunicativas</h4>
+<ul>
+<li>¿Cómo te llamas?</li>
+<li>¿De dónde eres?</li>
+<li>¿Cuántos años tienes?</li>
+<li>¿Qué estudias?</li>
+<li>¿Dónde vives?</li>
+<li>¿Hablas español?</li>
+</ul>
+<h3>Actividades Prácticas</h3>
+<h4>Diálogo 1: Presentación en Clase</h4>
+<p><strong>A:</strong> ¡Hola! Me llamo María. ¿Y tú?
+<br><strong>B:</strong> Encantada, María. Yo soy Li. ¿Eres de aquí?
+<br><strong>A:</strong> No, soy de Colombia. ¿Y tú, Li? ¿De dónde eres?
+<br><strong>B:</strong> Soy de China. Vivo aquí con mi familia.
+<br><strong>A:</strong> ¿Qué estudias aquí?
+<br><strong>B:</strong> Estudio español. ¿Y tú?
+<br><strong>A:</strong> Yo trabajo en una empresa de tecnología.
+<br><strong>B:</strong> ¡Qué interesante! Mucho gusto, María.
+<br><strong>A:</strong> Igualmente, Li. Nos vemos en clase.
+</p>
+<h4>Diálogo 2: Describiendo la Familia</h4>
+<p><strong>A:</strong> Li, ¿tienes hermanos?
+<br><strong>B:</strong> Sí, tengo un hermano y una hermana. Mi hermano se llama Wang y tiene 22 años.
+<br><strong>A:</strong> ¿Y qué hace?
+<br><strong>B:</strong> Es estudiante de ingeniería. Mi hermana se llama Mei y tiene 18 años.
+<br><strong>A:</strong> ¿Y tus padres?
+<br><strong>B:</strong> Mi padre es médico y mi madre es profesora.
+<br><strong>A:</strong> ¡Qué familia tan profesional! Yo soy hija única.
+<br><strong>B:</strong> ¿En serio? ¿No tienes hermanos?
+<br><strong>A:</strong> No, pero tengo muchos primos.
+</p>
+<h3>Ejercicios</h3>
+<h4>Ejercicio 1: Conjugación</h4>
+<p>Conjuga estos verbos en presente:
+<br>1. (Yo) ________ (hablar) español
+<br>2. (Tú) ________ (vivir) en Madrid
+<br>3. (Ella) ________ (estudiar) medicina
+<br>4. (Nosotros) ________ (trabajar) mucho
+<br>5. (Ellos) ________ (comer) en el restaurante
+</p>
+<h4>Ejercicio 2: Completar el diálogo</h4>
+<p>A: Hola, ¿cómo (1)________ (tú/llamarse)?
+<br>B: Me (2)________ (yo/llamarse) Ahmed. ¿Y tú?
+<br>A: Yo (3)________ (yo/ser) Sara. ¿De dónde (4)________ (tú/ser)?
+<br>B: (5)________ (Yo/ser) de Egipto. ¿Y tú?
+<br>A: Yo (6)________ (yo/ser) de México. ¿Qué (7)________ (tú/estudiar)?
+<br>B: (8)________ (Yo/estudiar) español. ¿Y tú?
+</p>
+<h4>Ejercicio 3: Describir personas</h4>
+<p>Usa los adjetivos para describir:
+<br>1. Tu mejor amigo/a
+<br>2. Tu profesor/a de español
+<br>3. Un miembro de tu familia
+<br>4. Tú mismo/a
+</p>
+<h3>Tarea para la Semana</h3>
+<p>1. Prepara una presentación personal de 2-3 minutos
+<br>2. Aprende 20 palabras nuevas de vocabulario
+<br>3. Practica el diálogo de presentación con un compañero
+<br>4. Escucha un podcast básico en español (10 minutos)
+<br>5. Escribe un párrafo describiendo a tu familia
+</p>
+<h3>Recursos Online</h3>
+<ul>
+<li><strong>Videos</strong>: Presentaciones básicas en español</li>
+<li><strong>Audio</strong>: Conversaciones sencillas diarias</li>
+<li><strong>Ejercicios</strong>: Práctica de conjugación en línea</li>
+<li><strong>Vocabulario</strong>: Flashcards digitales con imágenes</li>
+</ul>
+<h3>Evaluación de la Semana</h3>
+<ul>
+<li>Participación en clase (30%)</li>
+<li>Presentación oral (40%)</li>
+<li>Ejercicios escritos (20%)</li>
+<li>Práctica en casa (10%)</li>
+</ul>
+<hr>
+<p><strong>Próxima semana</strong>: La vida cotidiana - Rutinas, gustos y expresión del tiempo pasado reciente.
+</p>
+    </div>
+</body>
+</html>

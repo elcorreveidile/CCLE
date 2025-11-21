@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiante - Intensivo 3 | CLM-UGR</title>
+    <meta name="description" content="Regístrate en el curso Intensivo 3 de español nivel A2.1 del Centro de Lenguas Modernas de la Universidad de Granada.">
+
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Registro - Intensivo 3 | CLM-UGR">
+    <meta property="og:description" content="Únete al curso intensivo de español con metodología por proyectos">
+    <meta property="og:image" content="images/banner/hero-bg.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23C1272D'/><text x='50' y='70' font-size='60' font-weight='bold' text-anchor='middle' fill='white'>I3</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/config.js"></script>
+</head>
+<body class="register-page">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="images/banner/Logo-CLM-V1.jpg" alt="Centro de Lenguas Modernas UGR" class="logo-img">
+                </a>
+                <div class="brand-text">
+                    <p class="brand-title"><a href="index.html">Intensivo 3</a></p>
+                    <p>Curso de Español Nivel A2.1</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn btn-secondary btn-sm">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </a>
+        </nav>
+    </header>
+
+    <!-- Registration Container -->
+    <main class="register-container">
+        <div class="register-wrapper">
+            <!-- Left Side: Info -->
+            <div class="register-info">
+                <div class="info-content">
+                    <h2><i class="fas fa-graduation-cap"></i> Únete al Intensivo 3</h2>
+                    <p class="info-description">Completa tu registro y comienza tu viaje de aprendizaje del español a través de proyectos reales en Granada.</p>
+
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Metodología por Proyectos</h4>
+                                <p>Aprende español trabajando en proyectos reales sobre Granada</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Profesor Virtual 24/7</h4>
+                                <p>Acceso a asistente de IA para resolver dudas en cualquier momento</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Comunidad de Aprendizaje</h4>
+                                <p>Foro y recursos compartidos con otros estudiantes</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Certificado Oficial</h4>
+                                <p>Certificado del CLM-UGR al completar el curso</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-footer">
+                        <p><strong>¿Ya tienes cuenta?</strong></p>
+                        <a href="index.html#login" class="link-primary">Iniciar sesión aquí</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="register-form-container">
+                <div class="form-header">
+                    <h2>Crear Cuenta</h2>
+                    <p>Completa el formulario para registrarte</p>
+                </div>
+
+                <form id="registerForm" class="register-form" novalidate>
+                    <!-- Progress Steps -->
+                    <div class="progress-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <span>Datos Personales</span>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <span>Cuenta</span>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <span>Información Académica</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" id="step1">
+                        <h3>Datos Personales</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Nombre <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Apellidos <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Teléfono <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="country">País de Origen <span class="required">*</span></label>
+                                <select id="country" name="country" required>
+                                    <option value="">Selecciona tu país</option>
+                                    <option value="ES">España</option>
+                                    <option value="FR">Francia</option>
+                                    <option value="DE">Alemania</option>
+                                    <option value="IT">Italia</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="UK">Reino Unido</option>
+                                    <option value="US">Estados Unidos</option>
+                                    <option value="CN">China</option>
+                                    <option value="JP">Japón</option>
+                                    <option value="KR">Corea del Sur</option>
+                                    <option value="BR">Brasil</option>
+                                    <option value="MX">México</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="OTHER">Otro</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="birthDate">Fecha de Nacimiento <span class="required">*</span></label>
+                                <input type="date" id="birthDate" name="birthDate" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary" onclick="nextStep(1)">
+                                Siguiente <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Account Information -->
+                    <div class="form-step" id="step2">
+                        <h3>Información de Cuenta</h3>
+
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                            <span class="error-message"></span>
+                            <span class="helper-text">Usarás este email para iniciar sesión</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Contraseña <span class="required">*</span></label>
+                            <div class="password-input">
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar"></div>
+                            </div>
+                            <span class="error-message"></span>
+                            <span class="helper-text">Mínimo 8 caracteres, una mayúscula, un número y un símbolo</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmar Contraseña <span class="required">*</span></label>
+                            <div class="password-input">
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(2)">
+                                <i class="fas fa-arrow-left"></i> Anterior
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(2)">
+                                Siguiente <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Academic Information -->
+                    <div class="form-step" id="step3">
+                        <h3>Información Académica</h3>
+
+                        <div class="form-group">
+                            <label for="university">Universidad/Institución</label>
+                            <input type="text" id="university" name="university" placeholder="Universidad de Granada">
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="spanishLevel">Nivel Actual de Español <span class="required">*</span></label>
+                                <select id="spanishLevel" name="spanishLevel" required>
+                                    <option value="">Selecciona tu nivel</option>
+                                    <option value="A1">A1 - Principiante</option>
+                                    <option value="A1.2">A1.2 - Principiante Alto</option>
+                                    <option value="A2">A2 - Elemental</option>
+                                    <option value="A2.1">A2.1 - Elemental (recomendado)</option>
+                                    <option value="B1">B1 - Intermedio</option>
+                                    <option value="OTHER">Otro / No estoy seguro</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="startDate">Fecha de Inicio Preferida <span class="required">*</span></label>
+                                <input type="date" id="startDate" name="startDate" required>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="motivation">¿Por qué quieres estudiar español? (opcional)</label>
+                            <textarea id="motivation" name="motivation" rows="3" placeholder="Cuéntanos brevemente sobre tus motivaciones..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">
+                                Acepto los <a href="#" target="_blank">términos y condiciones</a> y la
+                                <a href="#" target="_blank">política de privacidad</a> <span class="required">*</span>
+                            </label>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">
+                                Quiero recibir información sobre cursos y eventos del CLM-UGR
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(3)">
+                                <i class="fas fa-arrow-left"></i> Anterior
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-user-plus"></i> Crear Cuenta
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Success Message (hidden by default) -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>¡Registro Exitoso!</h3>
+                    <p>Tu cuenta ha sido creada correctamente. Te hemos enviado un correo de confirmación a <strong id="registeredEmail"></strong></p>
+                    <p>Por favor, verifica tu correo electrónico para activar tu cuenta.</p>
+                    <div class="success-actions">
+                        <a href="index.html#login" class="btn btn-primary">Iniciar Sesión</a>
+                        <a href="index.html" class="btn btn-secondary">Volver al Inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Intensivo 3 - CLM UGR</h4>
+                <p>Curso de español intensivo nivel A2.1 para alumnos del Centro de Lenguas Modernas de la Universidad de Granada.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#proyectos">Proyectos</a></li>
+                    <li><a href="index.html#login">Área de Alumnos</a></li>
+                    <li><a href="register.html">Registrarse</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Centro de Lenguas Modernas</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> clm@ugr.es</li>
+                    <li><i class="fas fa-phone"></i> 958 24 35 35</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Plaza de la Universidad, s/n<br>Granada, España</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Centro de Lenguas Modernas - Universidad de Granada. Curso Intensivo 3 - Español A2.1</p>
+        </div>
+    </footer>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

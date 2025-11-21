@@ -1,0 +1,19 @@
+{
+  "name": "cile",
+  "version": "1.0.0",
+  "description": "Sitio web informativo para el curso Intensivo 3 de español, diseñado específicamente para alumnos del Centro de Lenguas Modernas de la Universidad de Granada (CLM-UGR). El curso está enfocado para estudiantes de nivel A2.1 que quieren consolidar sus conocimientos básicos y alcanzar fluidez en comunicaciones cotidianas.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:34549/git/elcorreveidile/CILE"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

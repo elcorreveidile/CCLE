@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test - Formulario Registro</title>
+    <script src="js/config.js"></script>
+    <script>
+        // Script de diagnóstico
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM cargado');
+            console.log('nextStep disponible?', typeof nextStep);
+            console.log('prevStep disponible?', typeof prevStep);
+            console.log('window.APP_CONFIG:', window.APP_CONFIG);
+            console.log('window.showMessage:', typeof window.showMessage);
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .console-output {
+            background: #f5f5f5;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 3px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test - Diagnóstico del Formulario de Registro</h1>
+
+    <div class="test-section">
+        <h2>1. Test de Config.js</h2>
+        <button onclick="testConfig()">Probar Configuración</button>
+        <div id="config-result" class="console-output"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Test de Carga de register.js</h2>
+        <button onclick="testRegisterLoaded()">Verificar Funciones</button>
+        <div id="register-result" class="console-output"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Test de Notificaciones</h2>
+        <button onclick="testNotification()">Probar Notificación</button>
+    </div>
+
+    <div class="test-section">
+        <h2>4. Abrir Console del Navegador</h2>
+        <p>Presiona F12 para abrir las herramientas de desarrollo y ve a la pestaña "Console"</p>
+    </div>
+
+    <script src="js/register.js"></script>
+    <script>
+        function testConfig() {
+            const result = document.getElementById('config-result');
+            let output = '';
+
+            output += 'window.APP_CONFIG existe: ' + (!!window.APP_CONFIG) + '\n';
+            if (window.APP_CONFIG) {
+                output += 'apiBaseUrl: ' + window.APP_CONFIG.apiBaseUrl + '\n';
+                output += 'getApiUrl existe: ' + (typeof window.APP_CONFIG.getApiUrl === 'function') + '\n';
+                if (typeof window.APP_CONFIG.getApiUrl === 'function') {
+                    output += 'getApiUrl("/test"): ' + window.APP_CONFIG.getApiUrl('/test') + '\n';
+                }
+            }
+            output += '\nwindow.showMessage existe: ' + (typeof window.showMessage === 'function');
+
+            result.textContent = output;
+        }
+
+        function testRegisterLoaded() {
+            const result = document.getElementById('register-result');
+            let output = '';
+
+            output += 'nextStep existe: ' + (typeof nextStep === 'function') + '\n';
+            output += 'prevStep existe: ' + (typeof prevStep === 'function') + '\n';
+            output += 'handleSubmit existe: ' + (typeof handleSubmit === 'function') + '\n';
+            output += 'validateStep existe: ' + (typeof validateStep === 'function') + '\n';
+            output += 'validateField existe: ' + (typeof validateField === 'function') + '\n';
+
+            result.textContent = output;
+        }
+
+        function testNotification() {
+            if (typeof window.showMessage === 'function') {
+                window.showMessage('success', 'Test exitoso!');
+                window.showMessage('error', 'Test de error');
+            } else {
+                alert('showMessage no está disponible');
+            }
+        }
+    </script>
+</body>
+</html>

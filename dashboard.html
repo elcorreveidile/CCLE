@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Dashboard - Intensivo 3 | CLM-UGR</title>
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23C1272D'/><text x='50' y='70' font-size='60' font-weight='bold' text-anchor='middle' fill='white'>I3</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/config.js"></script>
+</head>
+<body class="dashboard-page">
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>CLM-UGR</span>
+                </a>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">U</div>
+                <div class="user-details">
+                    <h3>Usuario</h3>
+                    <p>email@ejemplo.com</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-item">
+                    <a href="#" class="nav-link active" data-section="overview">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="ai-tutor">
+                        <i class="fas fa-robot"></i>
+                        <span>Profesor Virtual</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="forum">
+                        <i class="fas fa-comments"></i>
+                        <span>Foro</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="resources">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Recursos</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="attendance">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Asistencia</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="progress">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Mi Progreso</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Perfil</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <h1>Bienvenido al Dashboard</h1>
+                <p>Gestiona tu aprendizaje y progreso en el Intensivo 3</p>
+            </header>
+
+            <!-- Content Sections -->
+            <div class="dashboard-content">
+                <!-- Overview Section -->
+                <section id="overview-section" class="content-section active">
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon primary">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>0</h3>
+                                <p>Clases Asistidas</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon success">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>0</h3>
+                                <p>Participaciones en Foro</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon info">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>0</h3>
+                                <p>Consultas al Profesor Virtual</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon warning">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>75%</h3>
+                                <p>Progreso Global</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Current Projects -->
+                    <div class="projects-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-project-diagram"></i>
+                            Proyectos Actuales
+                        </h2>
+
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3>Ruta de Tapas por Granada</h3>
+                                    <span class="project-badge in-progress">En Progreso</span>
+                                </div>
+                                <p>Explora la gastronomía local y crea tu propia ruta de tapas por Granada</p>
+                                <div class="project-progress">
+                                    <div class="progress-label">
+                                        <span>Progreso</span>
+                                        <strong>45%</strong>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <a href="https://detapasporgranada.wordpress.com" target="_blank" class="project-link">
+                                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3>Serie: Para Mudarse a España</h3>
+                                    <span class="project-badge">Próximamente</span>
+                                </div>
+                                <p>Crea un episodio sobre algún aspecto importante de mudarse a España</p>
+                                <div class="project-progress">
+                                    <div class="progress-label">
+                                        <span>Progreso</span>
+                                        <strong>0%</strong>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <a href="#resources" class="project-link" data-section="resources">
+                                    Ver Recursos <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <h3>Acciones Rápidas</h3>
+                        <div class="actions-grid">
+                            <button class="action-btn" onclick="switchSection('ai-tutor')">
+                                <i class="fas fa-robot"></i>
+                                <span>Consultar Profesor Virtual</span>
+                            </button>
+                            <button class="action-btn" onclick="switchSection('attendance')">
+                                <i class="fas fa-qrcode"></i>
+                                <span>Fichar Asistencia</span>
+                            </button>
+                            <button class="action-btn" onclick="switchSection('resources')">
+                                <i class="fas fa-download"></i>
+                                <span>Descargar Materiales</span>
+                            </button>
+                            <button class="action-btn" onclick="switchSection('forum')">
+                                <i class="fas fa-comment-dots"></i>
+                                <span>Ir al Foro</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI Tutor Section -->
+                <section id="ai-tutor-section" class="content-section">
+                    <div class="section-header">
+                        <h1><i class="fas fa-robot"></i> Profesor Virtual</h1>
+                        <p>Asistente con IA para resolver tus dudas de español 24/7</p>
+                    </div>
+
+                    <div class="ai-tutor-container">
+                        <div class="chat-container">
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="chat-message bot">
+                                    <div class="message-avatar">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="message-content">
+                                        <p>¡Hola! Soy tu Profesor Virtual. Puedo ayudarte con:</p>
+                                        <ul>
+                                            <li>Gramática española (verbos, tiempos, etc.)</li>
+                                            <li>Vocabulario y expresiones</li>
+                                            <li>Dudas sobre los proyectos</li>
+                                            <li>Práctica de conversación</li>
+                                            <li>Corrección de textos</li>
+                                        </ul>
+                                        <p>¿En qué puedo ayudarte hoy?</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chat-input-container">
+                                <textarea id="chatInput" placeholder="Escribe tu pregunta aquí..." rows="2"></textarea>
+                                <button class="btn btn-primary" id="sendChatBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="ai-sidebar">
+                            <h3>Sugerencias de Temas</h3>
+                            <div class="topic-suggestions">
+                                <button class="topic-btn" onclick="askAI('¿Cómo uso el pretérito perfecto?')">
+                                    Pretérito Perfecto
+                                </button>
+                                <button class="topic-btn" onclick="askAI('¿Cuál es la diferencia entre ser y estar?')">
+                                    Ser vs Estar
+                                </button>
+                                <button class="topic-btn" onclick="askAI('¿Cómo pido comida en un bar?')">
+                                    Pedir en un Bar
+                                </button>
+                                <button class="topic-btn" onclick="askAI('¿Qué vocabulario necesito para el proyecto de tapas?')">
+                                    Vocabulario Tapas
+                                </button>
+                            </div>
+
+                            <div class="ai-stats">
+                                <h4>Tu Actividad</h4>
+                                <p><i class="fas fa-comments"></i> <span id="totalChats">0</span> conversaciones</p>
+                                <p><i class="fas fa-clock"></i> Última consulta: <span id="lastChat">Nunca</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Forum Section -->
+                <section id="forum-section" class="content-section">
+                    <div class="section-header">
+                        <h1><i class="fas fa-comments"></i> Foro de Comunicación</h1>
+                        <p>Comparte ideas y colabora con tus compañeros</p>
+                        <button class="btn btn-primary" id="newPostBtn">
+                            <i class="fas fa-plus"></i> Nueva Publicación
+                        </button>
+                    </div>
+
+                    <div class="forum-container">
+                        <div class="forum-categories">
+                            <button class="category-btn active" data-category="all">
+                                <i class="fas fa-th"></i> Todos
+                            </button>
+                            <button class="category-btn" data-category="proyecto1">
+                                <i class="fas fa-utensils"></i> Ruta de Tapas
+                            </button>
+                            <button class="category-btn" data-category="proyecto2">
+                                <i class="fas fa-video"></i> Serie
+                            </button>
+                            <button class="category-btn" data-category="general">
+                                <i class="fas fa-comment"></i> General
+                            </button>
+                            <button class="category-btn" data-category="dudas">
+                                <i class="fas fa-question-circle"></i> Dudas
+                            </button>
+                        </div>
+
+                        <div class="forum-posts" id="forumPosts">
+                            <!-- Posts will be loaded dynamically -->
+                            <div class="empty-state">
+                                <i class="fas fa-comments"></i>
+                                <h3>No hay publicaciones aún</h3>
+                                <p>Sé el primero en iniciar una conversación</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resources Section -->
+                <section id="resources-section" class="content-section">
+                    <div class="section-header">
+                        <h1><i class="fas fa-folder-open"></i> Recursos y Materiales</h1>
+                        <p>Accede a todos los materiales del curso</p>
+                    </div>
+
+                    <div class="resources-grid" id="resourcesGrid">
+                        <!-- Resources will be loaded dynamically -->
+                    </div>
+                </section>
+
+                <!-- Attendance Section -->
+                <section id="attendance-section" class="content-section">
+                    <div class="section-header">
+                        <h1><i class="fas fa-calendar-check"></i> Control de Asistencia</h1>
+                        <p>Registra tu asistencia y consulta tu historial</p>
+                    </div>
+
+                    <div class="attendance-container">
+                        <div class="attendance-checkin">
+                            <div class="checkin-card">
+                                <div class="qr-scanner">
+                                    <i class="fas fa-qrcode"></i>
+                                    <h3>Escanear Código QR</h3>
+                                    <p>Escanea el código QR del aula para registrar tu asistencia</p>
+                                    <button class="btn btn-primary btn-lg" id="scanQRBtn">
+                                        <i class="fas fa-camera"></i> Escanear QR
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="attendance-history">
+                            <h3>Historial de Asistencia</h3>
+                            <div class="attendance-calendar" id="attendanceCalendar">
+                                <!-- Calendar will be rendered here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Progress Section -->
+                <section id="progress-section" class="content-section">
+                    <div class="progress-container">
+                        <h2 class="section-title">
+                            <i class="fas fa-chart-line"></i>
+                            Mi Progreso
+                        </h2>
+
+                        <!-- Progress Overview -->
+                        <div class="progress-overview">
+                            <div class="circular-progress" id="overall-progress">
+                                <div class="progress-ring">
+                                    <svg width="150" height="150">
+                                        <circle class="progress-ring-circle-bg" cx="75" cy="75" r="60"></circle>
+                                        <circle class="progress-ring-circle" cx="75" cy="75" r="60"
+                                                stroke-dasharray="376.99" stroke-dashoffset="94.25"></circle>
+                                    </svg>
+                                    <div class="progress-value">75%</div>
+                                </div>
+                                <h3>Progreso General</h3>
+                                <p>Avance total del curso</p>
+                            </div>
+
+                            <div class="circular-progress" id="project1-progress">
+                                <div class="progress-ring">
+                                    <svg width="150" height="150">
+                                        <circle class="progress-ring-circle-bg" cx="75" cy="75" r="60"></circle>
+                                        <circle class="progress-ring-circle" cx="75" cy="75" r="60"
+                                                stroke-dasharray="376.99" stroke-dashoffset="75.40"></circle>
+                                    </svg>
+                                    <div class="progress-value">80%</div>
+                                </div>
+                                <h3>Ruta de Tapas</h3>
+                                <p>Proyecto 1</p>
+                            </div>
+
+                            <div class="circular-progress" id="project2-progress">
+                                <div class="progress-ring">
+                                    <svg width="150" height="150">
+                                        <circle class="progress-ring-circle-bg" cx="75" cy="75" r="60"></circle>
+                                        <circle class="progress-ring-circle" cx="75" cy="75" r="60"
+                                                stroke-dasharray="376.99" stroke-dashoffset="131.95"></circle>
+                                    </svg>
+                                    <div class="progress-value">65%</div>
+                                </div>
+                                <h3>Serie España</h3>
+                                <p>Proyecto 2</p>
+                            </div>
+                        </div>
+
+                        <!-- Skills Section -->
+                        <div class="skills-section">
+                            <h2 class="section-title">
+                                <i class="fas fa-star"></i>
+                                Habilidades
+                            </h2>
+
+                            <div class="skill-item" id="skill-conversacion">
+                                <div class="skill-header">
+                                    <span class="skill-name">Conversación</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item" id="skill-gramatica">
+                                <div class="skill-header">
+                                    <span class="skill-name">Gramática</span>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item" id="skill-vocabulario">
+                                <div class="skill-header">
+                                    <span class="skill-name">Vocabulario</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item" id="skill-comprension">
+                                <div class="skill-header">
+                                    <span class="skill-name">Comprensión</span>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile-section" class="content-section">
+                    <div class="profile-container">
+                        <div class="profile-header">
+                            <div class="profile-avatar-large">U</div>
+                            <h2>Usuario</h2>
+                            <p>email@ejemplo.com</p>
+                        </div>
+
+                        <form id="profile-form" class="profile-form">
+                            <div class="form-group">
+                                <label for="profile-first-name">Nombre</label>
+                                <input type="text" id="profile-first-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-last-name">Apellidos</label>
+                                <input type="text" id="profile-last-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-email">Email</label>
+                                <input type="email" id="profile-email" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-phone">Teléfono</label>
+                                <input type="tel" id="profile-phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-country">País</label>
+                                <input type="text" id="profile-country">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-university">Universidad</label>
+                                <input type="text" id="profile-university">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-spanish-level">Nivel de Español</label>
+                                <select id="profile-spanish-level">
+                                    <option value="A1">A1 - Principiante</option>
+                                    <option value="A2">A2 - Elemental</option>
+                                    <option value="A2.1">A2.1 - Elemental Avanzado</option>
+                                    <option value="B1">B1 - Intermedio</option>
+                                    <option value="B2">B2 - Intermedio Alto</option>
+                                    <option value="C1">C1 - Avanzado</option>
+                                    <option value="C2">C2 - Maestría</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Guardar Cambios
+                                </button>
+                            </div>
+                        </form>
+
+                            <div class="profile-section">
+                                <h3>Cambiar Contraseña</h3>
+                                <form id="passwordForm">
+                                    <div class="form-group">
+                                        <label>Contraseña Actual</label>
+                                        <input type="password" id="currentPassword" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nueva Contraseña</label>
+                                        <input type="password" id="newPassword" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Confirmar Nueva Contraseña</label>
+                                        <input type="password" id="confirmNewPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-secondary">
+                                        <i class="fas fa-key"></i> Cambiar Contraseña
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- New Post Modal -->
+    <div id="newPostModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nueva Publicación</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="newPostForm">
+                <div class="form-group">
+                    <label>Título</label>
+                    <input type="text" id="postTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Categoría</label>
+                    <select id="postCategory" required>
+                        <option value="general">General</option>
+                        <option value="proyecto1">Ruta de Tapas</option>
+                        <option value="proyecto2">Serie</option>
+                        <option value="dudas">Dudas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Contenido</label>
+                    <textarea id="postContent" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Publicar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
