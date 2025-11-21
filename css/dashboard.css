@@ -1422,3 +1422,288 @@ body {
 .mb-1 { margin-bottom: 0.5rem; }
 .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 1.5rem; }
+
+/* ========================================
+   CCL SECTION STYLES
+   ======================================== */
+
+.ccl-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+.ccl-form-container .card,
+.ccl-results-container .card,
+.ccl-history-container .card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.ccl-form-container .card h2,
+.ccl-results-container .card h2,
+.ccl-history-container .card h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ccl-form-container .card p {
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.form-help {
+    display: block;
+    color: var(--info-color);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+#cclAnalysisForm textarea {
+    min-height: 200px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+/* CCL Results */
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.result-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.result-section h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.result-item {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.result-item label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.result-item span {
+    display: block;
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.result-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: var(--info-color);
+    color: var(--white);
+}
+
+.result-details {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.result-details h4 {
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.result-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.result-details ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--secondary-color);
+}
+
+.result-details ul li:before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+#resultTareas {
+    display: grid;
+    gap: 1rem;
+}
+
+.tarea-card {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid var(--success-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tarea-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.tarea-card p {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.tarea-card small {
+    display: block;
+    color: var(--medium-gray);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* CCL History */
+.history-item {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--info-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.history-item:hover {
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.history-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.history-item-date {
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+}
+
+.history-item-preview {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-item-results {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.history-result-tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    background: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+/* Loading State */
+.ccl-loading {
+    text-align: center;
+    padding: 3rem;
+}
+
+.ccl-loading i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--medium-gray);
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ccl-container {
+        grid-template-columns: 1fr;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
