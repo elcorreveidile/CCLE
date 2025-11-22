@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 3</title>
+    <style>
+/* Estilos profesionales para PDFs del Curso Intensivo de Español */
+
+@page {
+    margin: 2cm;
+    size: A4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #333;
+    background: white;
+    max-width: 100%;
+}
+
+/* Encabezados */
+h1 {
+    color: #1a4d8f;
+    font-size: 28pt;
+    font-weight: bold;
+    margin: 0 0 10pt 0;
+    padding: 15pt 0 10pt 0;
+    border-bottom: 3pt solid #f39c12;
+    page-break-after: avoid;
+}
+
+h2 {
+    color: #2c5f8d;
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 20pt 0 8pt 0;
+    padding-top: 10pt;
+    border-bottom: 1.5pt solid #e8e8e8;
+    page-break-after: avoid;
+}
+
+h3 {
+    color: #34495e;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 15pt 0 8pt 0;
+    page-break-after: avoid;
+}
+
+h4 {
+    color: #555;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 12pt 0 6pt 0;
+    page-break-after: avoid;
+}
+
+/* Párrafos y texto */
+p {
+    margin: 8pt 0;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+}
+
+/* Listas */
+ul, ol {
+    margin: 10pt 0;
+    padding-left: 25pt;
+}
+
+li {
+    margin: 5pt 0;
+    line-height: 1.5;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+ul ul li {
+    list-style-type: circle;
+}
+
+/* Listas dentro de secciones específicas */
+h4 + ul, h4 + ol {
+    margin-top: 8pt;
+}
+
+/* Texto en negrita y cursiva */
+strong, b {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+em, i {
+    font-style: italic;
+    color: #555;
+}
+
+/* Código y texto monoespaciado */
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 2pt 4pt;
+    border-radius: 3pt;
+    font-size: 10pt;
+    color: #c7254e;
+}
+
+pre {
+    background-color: #f8f8f8;
+    border: 1pt solid #ddd;
+    border-left: 4pt solid #3498db;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    overflow-x: auto;
+    page-break-inside: avoid;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #333;
+    font-size: 9pt;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15pt 0;
+    page-break-inside: avoid;
+}
+
+th, td {
+    border: 1pt solid #ddd;
+    padding: 8pt 12pt;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Cajas especiales para diálogos */
+h4:contains("Diálogo") {
+    color: #27ae60;
+    border-left: 4pt solid #27ae60;
+    padding-left: 10pt;
+}
+
+/* Separadores */
+hr {
+    border: none;
+    border-top: 2pt solid #e8e8e8;
+    margin: 20pt 0;
+}
+
+/* Secciones específicas */
+.objetivos, .contenido-gramatical, .vocabulario, .ejercicios {
+    background-color: #f9f9f9;
+    padding: 12pt;
+    border-radius: 4pt;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+}
+
+/* Cajas de información */
+.info-box {
+    background-color: #e3f2fd;
+    border-left: 4pt solid #2196f3;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+.warning-box {
+    background-color: #fff3e0;
+    border-left: 4pt solid #ff9800;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+/* Ejemplos */
+blockquote {
+    border-left: 4pt solid #9b59b6;
+    padding-left: 15pt;
+    margin: 12pt 0 12pt 20pt;
+    font-style: italic;
+    color: #555;
+    background-color: #f8f5fb;
+    padding: 10pt 10pt 10pt 15pt;
+    border-radius: 4pt;
+}
+
+/* Evitar quiebres de página en lugares inapropiados */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+}
+
+/* Footer y header para todas las páginas */
+@page {
+    @top-right {
+        content: "Curso Intensivo de Español - CILE";
+        font-size: 9pt;
+        color: #999;
+    }
+    @bottom-center {
+        content: "Página " counter(page);
+        font-size: 9pt;
+        color: #999;
+    }
+}
+
+/* Enlaces */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mejoras de impresión */
+@media print {
+    body {
+        font-size: 10pt;
+    }
+
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 16pt;
+    }
+
+    h3 {
+        font-size: 13pt;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+}
+
+    </style>
+    <script>
+        // Función para imprimir/guardar como PDF
+        function printPDF() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <div class="no-print" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <button onclick="printPDF()" style="
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        ">
+            📄 Guardar como PDF
+        </button>
+    </div>
+
+    <div class="content">
+<h1>Semana 3: Experiencias Personales</h1>
+<h2>Nivel A2.1 - Narrar Eventos Pasados y Planes Futuros</h2>
+<h3>Objetivos de la semana</h3>
+<ul>
+<li>Diferenciar y usar correctamente pretérito perfecto e imperfecto</li>
+<li>Narrar eventos pasados y experiencias personales</li>
+<li>Expresar planes y predicciones futuras</li>
+<li>Usar conectores temporales adecuados</li>
+<li>Describir biografías simples</li>
+</ul>
+<h3>Contenido Gramatical</h3>
+<h4>1. Pretérito Imperfecto</h4>
+<p><strong>Uso</strong>: Describe acciones habituales en el pasado, estados, descripciones, acciones simultáneas
+</p>
+<p><strong>Conjugación</strong> (hablar, comer, vivir)
+</p>
+<ul>
+<li>Yo hablaba, comía, vivía</li>
+<li>Tú hablabas, comías, vivías</li>
+<li>Él/ella hablaba, comía, vivía</li>
+<li>Nosotros hablábamos, comíamos, vivíamos</li>
+<li>Vosotros hablabais, comíais, vivíais</li>
+<li>Ellos hablaban, comían, vivían</li>
+</ul>
+<p><strong>Verbos irregulares importantes:</strong>
+</p>
+<ul>
+<li><strong>SER</strong>: era, eras, era, éramos, erais, eran</li>
+<li><strong>IR</strong>: iba, ibas, iba, íbamos, ibais, iban</li>
+<li><strong>VER</strong>: veía, veías, veía, veíamos, veíais, veían</li>
+<li><strong>TENER</strong>: tenía, tenías, tenía, teníamos, teníais, tenían</li>
+<li><strong>ESTAR</strong>: estaba, estabas, estaba, estábamos, estabais, estaban</li>
+<li><strong>PODER</strong>: podía, podías, podía, podíamos, podíais, podían</li>
+<li><strong>QUERER</strong>: quería, querías, quería, queríamos, queríais, querían</li>
+<li><strong>HACER</strong>: hacía, hacías, hacía, hacíamos, hacíais, hacían</li>
+<li><strong>DECIR</strong>: decía, decías, decía, decíamos, decíais, decían</li>
+</ul>
+<h4>2. Diferencias entre Pretérito Perfecto e Imperfecto</h4>
+<p><strong>Pretérito Perfecto</strong> (acciones completas, puntuales)
+</p>
+<ul>
+<li><em>Ayer <strong>llegué</strong> tarde</em> (acción específica)</li>
+<li><em>El año pasado <strong>viajé</strong> a México</em> (evento completo)</li>
+<li><em>Anoche <strong>vi</strong> una película</em> (acción terminada)</li>
+</ul>
+<p><strong>Imperfecto</strong> (descripciones, hábitos, acciones en progreso)
+</p>
+<ul>
+<li><em>Cuando era niño, <strong>vivía</strong> en Madrid</em> (estado/duración)</li>
+<li><em>Siempre <strong>estudiaba</strong> por la tarde</em> (hábito)</li>
+<li><em>Mientras <strong>leía</strong>, sonó el teléfono</em> (acción en progreso)</li>
+</ul>
+<p><strong>Reglas básicas:</strong>
+</p>
+<ul>
+<li><strong>Perfecto</strong>: acciones completas, con límites temporales claros</li>
+<li><strong>Imperfecto</strong>: descripciones, estados, hábitos, acciones simultáneas</li>
+</ul>
+<h4>3. Futuro Simple</h4>
+<p><strong>Formación</strong>: infinitivo + -é, -ás, -á, -emos, -éis, -án
+</p>
+<p><strong>Verbos regulares:</strong>
+</p>
+<ul>
+<li><strong>hablar</strong>: hablaré, hablarás, hablará, hablaremos, hablaréis, hablarán</li>
+<li><strong>comer</strong>: comeré, comerás, comerá, comeremos, comeréis, comerán</li>
+<li><strong>vivir</strong>: viviré, vivirás, vivirá, viviremos, viviréis, vivirán</li>
+</ul>
+<p><strong>Verbos irregulares comunes:</strong>
+</p>
+<ul>
+<li><strong>decir</strong> → diré, dirás, dirá, diremos, diréis, dirán</li>
+<li><strong>hacer</strong> → haré, harás, hará, haremos, haréis, harán</li>
+<li><strong>poder</strong> → podré, podrás, podrá, podremos, podréis, podrán</li>
+<li><strong>querer</strong> → querré, querrás, querrá, querremos, querréis, querrán</li>
+<li><strong>saber</strong> → sabré, sabrás, sabrá, sabremos, sabréis, sabrán</li>
+<li><strong>poner</strong> → pondré, pondrás, pondrá, pondremos, pondréis, pondrán</li>
+<li><strong>salir</strong> → saldré, saldrás, saldrá, saldremos, saldréis, saldrán</li>
+<li><strong>venir</strong> → vendré, vendrás, vendrá, vendremos, vendréis, vendrán</li>
+<li><strong>tener</strong> → tendré, tendrás, tendrá, tendremos, tendréis, tendrán</li>
+</ul>
+<h4>4. "Ir a" + Infinitivo (Planes Inmediatos)</h4>
+<p><strong>Estructura</strong>: presente de ir + a + infinitivo
+</p>
+<ul>
+<li><strong>Voy a estudiar</strong> esta noche</li>
+<li><strong>Vas a viajar</strong> el próximo mes</li>
+<li><strong>Va a llover</strong> mañana</li>
+<li><strong>Vamos a comer</strong> juntos</li>
+<li><strong>Vais a aprender</strong> español</li>
+<li><strong>Van a venir</strong> a la fiesta</li>
+</ul>
+<h4>5. Conectores Temporales</h4>
+<p><strong>Para secuencias:</strong>
+</p>
+<ul>
+<li><strong>cuando</strong> - when</li>
+<li><strong>mientras</strong> - while</li>
+<li><strong>después</strong> - after</li>
+<li><strong>antes</strong> - before</li>
+<li><strong>luego</strong> - then</li>
+<li><strong>primero</strong> - first</li>
+<li><strong>finalmente</strong> - finally</li>
+</ul>
+<p><strong>Ejemplos:</strong>
+</p>
+<ul>
+<li><em>Cuando era niño, <strong>vivía</strong> en una ciudad pequeña</em></li>
+<li><strong>Mientras</strong> estudiaba, escuchaba música</li>
+<li><strong>Después</strong> de clase, fui a casa</li>
+<li><strong>Antes</strong> de dormir, leí un libro</li>
+</ul>
+<h3>Vocabulario Esencial</h3>
+<h4>Biografías y Eventos Vitales</h4>
+<ul>
+<li><strong>Nacimiento</strong>: nacer, el cumpleaños, la fecha de nacimiento</li>
+<li><strong>Infancia</strong>: el niño/la niña, jugar, los juguetes, la escuela</li>
+<li><strong>Adolescencia</strong>: el adolescente, los estudios, los amigos</li>
+<li><strong>Adultez</strong>: el trabajo, la carrera, casarse, tener hijos</li>
+<li><strong>Eventos importantes</strong>: graduarse, mudarse, empezar/trabajar</li>
+</ul>
+<h4>Viajes y Desplazamientos</h4>
+<ul>
+<li><strong>Medios de transporte</strong>: el avión, el tren, el coche, el autobús</li>
+<li><strong>Lugares</strong>: el hotel, el aeropuerto, la estación, la ciudad</li>
+<li><strong>Actividades</strong>: visitar, conocer, hacer turismo, tomar fotos</li>
+<li><strong>Experiencias</strong>: la aventura, el descubrimiento, el recuerdo</li>
+</ul>
+<h4>Proyectos y Planes</h4>
+<ul>
+<li><strong>Estudios</strong>: la universidad, la carrera, el máster, el doctorado</li>
+<li><strong>Trabajo</strong>: el empleo, la empresa, el puesto, el salario</li>
+<li><strong>Vida personal</strong>: casarse, tener hijos, comprar una casa</li>
+<li><strong>Metas</strong>: el objetivo, la meta, el propósito, el sueño</li>
+</ul>
+<h4>Emociones y Sentimientos</h4>
+<ul>
+<li><strong>Positivos</strong>: feliz, contento, emocionado, orgulloso, agradecido</li>
+<li><strong>Negativos</strong>: triste, preocupado, nervioso, frustrado, decepcionado</li>
+<li><strong>Neutros</strong>: sorprendido, curioso, interesado, pensativo</li>
+</ul>
+<h3>Expresiones Útiles</h3>
+<h4>Narrar el Pasado</h4>
+<ul>
+<li><strong>Cuando era joven...</strong> - When I was young...</li>
+<li><strong>En aquella época...</strong> - In those days...</li>
+<li><strong>Recuerdo que...</strong> - I remember that...</li>
+<li><strong>Siempre me gustaba...</strong> - I always liked...</li>
+<li><strong>Nunca olvidaré cuando...</strong> - I'll never forget when...</li>
+</ul>
+<h4>Hablar del Futuro</h4>
+<ul>
+<li><strong>En el futuro...</strong> - In the future...</li>
+<li><strong>El próximo año...</strong> - Next year...</li>
+<li><strong>Dentro de poco...</strong> - Soon...</li>
+<li><strong>Más tarde...</strong> - Later...</li>
+<li><strong>Espero que...</strong> - I hope that...</li>
+</ul>
+<h4>Expresar Opiniones sobre Pasado/Futuro</h4>
+<ul>
+<li><strong>Fue una experiencia...</strong> - It was an... experience</li>
+<li><strong>Creo que será...</strong> - I think it will be...</li>
+<li><strong>Me gustaría...</strong> - I would like to...</li>
+<li><strong>Estoy seguro/a de que...</strong> - I'm sure that...</li>
+</ul>
+<h3>Actividades Prácticas</h3>
+<h4>Diálogo 1: Recordando la Infancia</h4>
+<p><strong>A:</strong> ¿Dónde vivías cuando eras niño, Li?
+<br><strong>B:</strong> Vivía en Shanghai con mis padres y mi hermana.
+<br><strong>A:</strong> ¿Cómo era tu ciudad?
+<br><strong>B:</strong> Era muy grande y moderna. Siempre había mucha gente en las calles.
+<br><strong>A:</strong> ¿Qué te gustaba hacer de niño?
+<br><strong>B:</strong> Me encantaba jugar en el parque con mis amigos. También leía muchos libros.
+<br><strong>A:</strong> ¿Y cuándo comenzaste a estudiar español?
+<br><strong>B:</strong> Empecé cuando tenía 15 años. Mi profesor era muy simpático.
+<br><strong>A:</strong> ¿Era difícil?
+<br><strong>B</strong>: Al principio sí, pero después me gustó mucho.
+</p>
+<h4>Diálogo 2: Planes para el Futuro</h4>
+<p><strong>A:</strong> María, ¿qué vas a hacer después de terminar este curso?
+<br><strong>B:</strong> Voy a continuar con el nivel B1. Me gustaría ser fluido en español.
+<br><strong>A:</strong> ¡Qué bien! Yo también pienso seguir estudiando. El próximo año viajaré a España.
+<br><strong>B:</strong> ¿En serio? ¿Qué ciudad visitarás?
+<br><strong>A:</strong> Voy a ir a Madrid y Barcelona. Quiero conocer la cultura.
+<br><strong>B:</strong> ¡Tendrás una experiencia fantástica! Yo espero visitar España el año que viene.
+<br><strong>A:</strong> ¿Qué harás allí?
+<br><strong>B:</strong> Podré practicar mi español y conocer muchos lugares interesantes.
+</p>
+<h4>Diálogo 3: Narrando un Evento</h4>
+<p><strong>A:</strong> ¿Qué hiciste el fin de semana pasado?
+<br><strong>B:</strong> El sábado fui a una boda de mi amiga. ¡Fue preciosa!
+<br><strong>A:</strong> ¿Dónde fue la ceremonia?
+<br><strong>B:</strong> Fue en una iglesia muy bonita del centro. Mientras esperábamos, llovía un poco.
+<br><strong>A:</strong> ¿Y qué hiciste después?
+<br><strong>B:</strong> Después fuimos a un restaurante para celebrar. Comimos mucho y bailamos hasta tarde.
+<br><strong>A:</strong> ¡Qué bien! Yo el domingo estuve en casa. Mi madre vino a visitarme.
+<br><strong>B:</strong> ¿Qué hicisteis?
+<br><strong>A:</strong> Preparamos la comida juntos y hablamos durante horas. Fue un día muy especial.
+</p>
+<h3>Ejercicios</h3>
+<h4>Ejercicio 1: Pretérito Perfecto vs Imperfecto</h4>
+<p>Elige la forma correcta:
+<br>1. Cuando (era/fui) niño, (vivía/viví) en una ciudad pequeña.
+<br>2. Anoche (vi/veía) una película que (era/fue) muy interesante.
+<br>3. Mientras (estudiaba/estudié), (escuchaba/escuché) música.
+<br>4. El año pasado (viajaba/viajé) a México por primera vez.
+<br>5. Siempre (me gustaba/gustó) el chocolate cuando (era/fui) pequeña.
+</p>
+<h4>Ejercicio 2: Futuro Simple</h4>
+<p>Conjuga en futuro:
+<br>1. El próximo año yo ________ (viajar) a España
+<br>2. Tú ________ (aprender) mucho español
+<br>3. Él ________ (encontrar) un buen trabajo
+<br>4. Nosotros ________ (vivir) en Madrid
+<br>5. Vosotros ________ (hacer) muchos amigos
+</p>
+<h4>Ejercicio 3: "Ir a" + Infinitivo</h4>
+<p>Completa las frases:
+<br>1. Mañana ________ (yo/estudiar) para el examen
+<br>2. Este fin de semana ________ (tú/salir) con amigos
+<br>3. El próximo mes ________ (él/ mudarse) a una nueva casa
+<br>4. En verano ________ (nosotros/viajar) a la playa
+<br>5. Después de clase ________ (vosotros/ir) al café
+</p>
+<h4>Ejercicio 4: Biografía Simple</h4>
+<p>Escribe una breve biografía (50-80 palabras) usando:
+</p>
+<ul>
+<li>Pretérito perfecto para eventos importantes</li>
+<li>Imperfecto para descripciones y hábitos</li>
+<li>Conectores temporales</li>
+<li>Expresiones de tiempo</li>
+</ul>
+<h3>Tarea para la Semana</h3>
+<p>1. Escribe tu biografía (150-200 palabras)
+<br>2. Prepara una presentación sobre tus planes futuros
+<br>3. Entrevista a un compañero sobre su infancia
+<br>4. Ve un documental sobre un país hispanohablante y resume
+<br>5. Crea una línea de tiempo con eventos importantes de tu vida
+</p>
+<h3>Recursos Online</h3>
+<ul>
+<li><strong>Videos</strong>: Biografías de personajes famosos</li>
+<li><strong>Audio</strong>: Historias personales y experiencias</li>
+<li><strong>Lecturas</strong>: Textos autobiográficos sencillos</li>
+<li><strong>Ejercicios</strong>: Práctica con tiempos verbales</li>
+</ul>
+<h3>Evaluación de la Semana</h3>
+<ul>
+<li>Presentación biográfica oral (30%)</li>
+<li>Redacción de biografía escrita (30%)</li>
+<li>Ejercicios gramaticales (25%)</li>
+<li>Participación en actividades (15%)</li>
+</ul>
+<hr>
+<p><strong>Próxima semana</strong>: Consolidación y Proyectos - Integración de todos los contenidos.
+</p>
+    </div>
+</body>
+</html>

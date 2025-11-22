@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Asistencia QR | Intensivo 3 | CLM-UGR</title>
+    <meta name="description" content="Sistema de control de asistencia mediante códigos QR para el curso Intensivo 3 del CLM-UGR">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Control de Asistencia | Intensivo 3 | CLM-UGR">
+    <meta property="og:description" content="Registra tu asistencia usando códigos QR">
+    <meta property="og:image" content="images/banner/hero-bg.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23C1272D'/><text x='50' y='70' font-size='60' font-weight='bold' text-anchor='middle' fill='white'>I3</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/attendance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/config.js"></script>
+</head>
+<body class="attendance-page">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="images/banner/Logo-CLM-V1.jpg" alt="Centro de Lenguas Modernas UGR" class="logo-img">
+                </a>
+                <div class="brand-text">
+                    <p class="brand-title"><a href="index.html">Intensivo 3</a></p>
+                    <p>Control de Asistencia QR</p>
+                </div>
+            </div>
+            <a href="dashboard.html" class="btn btn-secondary btn-sm">
+                <i class="fas fa-arrow-left"></i> Volver al panel
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="attendance-container">
+        <div class="attendance-wrapper">
+            <!-- Scanner Section -->
+            <div class="scanner-section">
+                <div class="scanner-header">
+                    <h2><i class="fas fa-qrcode"></i> Escanear Código QR</h2>
+                    <p>Usa la cámara de tu dispositivo para registrar tu asistencia</p>
+                </div>
+
+                <div class="scanner-container">
+                    <div id="qr-reader" class="qr-reader">
+                        <div class="scanner-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <h3>Escáner QR</h3>
+                            <p>Usa la cámara de tu dispositivo para escanear códigos QR</p>
+                            <button class="btn btn-primary btn-lg" onclick="requestCameraPermission()">
+                                <i class="fas fa-camera"></i> Iniciar Escáner
+                            </button>
+                            <p class="scanner-help">
+                                <small>Necesitarás permisos de cámara y una conexión HTTPS para el escáner QR</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="scanner-status" id="scannerStatus">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Presiona "Iniciar Escáner" para comenzar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manual Code Section -->
+            <div class="manual-section">
+                <div class="manual-header">
+                    <h2><i class="fas fa-keyboard"></i> Código Manual</h2>
+                    <p>Si no puedes escanear el QR, ingresa el código manualmente</p>
+                </div>
+
+                <form id="manualCodeForm" class="manual-form">
+                    <div class="form-group">
+                        <label for="attendanceCode">Código de asistencia</label>
+                        <input type="text" id="attendanceCode" name="attendanceCode"
+                               placeholder="Ej: CLM-123ABC" required maxlength="20">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitCodeBtn">
+                        <i class="fas fa-check"></i> Registrar Asistencia
+                    </button>
+                </form>
+
+                <div class="demo-section">
+                    <h3><i class="fas fa-flask"></i> Códigos de Demostración</h3>
+                    <p>Para probar el sistema, puedes usar estos códigos:</p>
+                    <div class="demo-code">
+                        <code>DEMO-CODE-123</code>
+                        <button class="btn btn-sm btn-secondary" onclick="fillTestCode()">
+                            <i class="fas fa-copy"></i> Usar código manual
+                        </button>
+                    </div>
+                    <p class="demo-note">
+                        <small>💡 Estos códigos son válidos por 24 horas para demostración</small>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Recent Attendance -->
+            <div class="recent-attendance">
+                <div class="attendance-header">
+                    <h2><i class="fas fa-history"></i> Asistencias Recientes</h2>
+                    <button class="btn btn-secondary btn-sm" onclick="refreshAttendance()">
+                        <i class="fas fa-sync-alt"></i> Actualizar
+                    </button>
+                </div>
+
+                <div id="attendanceList" class="attendance-list">
+                    <div class="loading-placeholder">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Cargando asistencias...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h3>¡Asistencia Registrada!</h3>
+            </div>
+            <div class="modal-body">
+                <p id="successMessage">Tu asistencia ha sido registrada correctamente.</p>
+                <div id="attendanceDetails" class="attendance-details"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="closeModal()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-exclamation-circle error-icon"></i>
+                <h3>Error</h3>
+            </div>
+            <div class="modal-body">
+                <p id="errorMessage">Ha ocurrido un error al registrar la asistencia.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Intensivo 3 - CLM UGR</h4>
+                <p>Sistema de control de asistencia mediante códigos QR para el curso intensivo de español.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="dashboard.html">Panel de Alumnos</a></li>
+                    <li><a href="attendance.html">Control de Asistencia</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Centro de Lenguas Modernas</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> clm@ugr.es</li>
+                    <li><i class="fas fa-phone"></i> 958 24 35 35</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Plaza de la Universidad, s/n<br>Granada, España</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Centro de Lenguas Modernas - Universidad de Granada. Curso Intensivo 3 - Español A2.1</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="js/attendance.js"></script>
+</body>
+</html>

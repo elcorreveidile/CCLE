@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 2</title>
+    <style>
+/* Estilos profesionales para PDFs del Curso Intensivo de Español */
+
+@page {
+    margin: 2cm;
+    size: A4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #333;
+    background: white;
+    max-width: 100%;
+}
+
+/* Encabezados */
+h1 {
+    color: #1a4d8f;
+    font-size: 28pt;
+    font-weight: bold;
+    margin: 0 0 10pt 0;
+    padding: 15pt 0 10pt 0;
+    border-bottom: 3pt solid #f39c12;
+    page-break-after: avoid;
+}
+
+h2 {
+    color: #2c5f8d;
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 20pt 0 8pt 0;
+    padding-top: 10pt;
+    border-bottom: 1.5pt solid #e8e8e8;
+    page-break-after: avoid;
+}
+
+h3 {
+    color: #34495e;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 15pt 0 8pt 0;
+    page-break-after: avoid;
+}
+
+h4 {
+    color: #555;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 12pt 0 6pt 0;
+    page-break-after: avoid;
+}
+
+/* Párrafos y texto */
+p {
+    margin: 8pt 0;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+}
+
+/* Listas */
+ul, ol {
+    margin: 10pt 0;
+    padding-left: 25pt;
+}
+
+li {
+    margin: 5pt 0;
+    line-height: 1.5;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+ul ul li {
+    list-style-type: circle;
+}
+
+/* Listas dentro de secciones específicas */
+h4 + ul, h4 + ol {
+    margin-top: 8pt;
+}
+
+/* Texto en negrita y cursiva */
+strong, b {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+em, i {
+    font-style: italic;
+    color: #555;
+}
+
+/* Código y texto monoespaciado */
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 2pt 4pt;
+    border-radius: 3pt;
+    font-size: 10pt;
+    color: #c7254e;
+}
+
+pre {
+    background-color: #f8f8f8;
+    border: 1pt solid #ddd;
+    border-left: 4pt solid #3498db;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    overflow-x: auto;
+    page-break-inside: avoid;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #333;
+    font-size: 9pt;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15pt 0;
+    page-break-inside: avoid;
+}
+
+th, td {
+    border: 1pt solid #ddd;
+    padding: 8pt 12pt;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Cajas especiales para diálogos */
+h4:contains("Diálogo") {
+    color: #27ae60;
+    border-left: 4pt solid #27ae60;
+    padding-left: 10pt;
+}
+
+/* Separadores */
+hr {
+    border: none;
+    border-top: 2pt solid #e8e8e8;
+    margin: 20pt 0;
+}
+
+/* Secciones específicas */
+.objetivos, .contenido-gramatical, .vocabulario, .ejercicios {
+    background-color: #f9f9f9;
+    padding: 12pt;
+    border-radius: 4pt;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+}
+
+/* Cajas de información */
+.info-box {
+    background-color: #e3f2fd;
+    border-left: 4pt solid #2196f3;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+.warning-box {
+    background-color: #fff3e0;
+    border-left: 4pt solid #ff9800;
+    padding: 12pt;
+    margin: 12pt 0;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+/* Ejemplos */
+blockquote {
+    border-left: 4pt solid #9b59b6;
+    padding-left: 15pt;
+    margin: 12pt 0 12pt 20pt;
+    font-style: italic;
+    color: #555;
+    background-color: #f8f5fb;
+    padding: 10pt 10pt 10pt 15pt;
+    border-radius: 4pt;
+}
+
+/* Evitar quiebres de página en lugares inapropiados */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+}
+
+/* Footer y header para todas las páginas */
+@page {
+    @top-right {
+        content: "Curso Intensivo de Español - CILE";
+        font-size: 9pt;
+        color: #999;
+    }
+    @bottom-center {
+        content: "Página " counter(page);
+        font-size: 9pt;
+        color: #999;
+    }
+}
+
+/* Enlaces */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mejoras de impresión */
+@media print {
+    body {
+        font-size: 10pt;
+    }
+
+    h1 {
+        font-size: 24pt;
+    }
+
+    h2 {
+        font-size: 16pt;
+    }
+
+    h3 {
+        font-size: 13pt;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+}
+
+    </style>
+    <script>
+        // Función para imprimir/guardar como PDF
+        function printPDF() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <div class="no-print" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <button onclick="printPDF()" style="
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        ">
+            📄 Guardar como PDF
+        </button>
+    </div>
+
+    <div class="content">
+<h1>Semana 2: La Vida Cotidiana</h1>
+<h2>Nivel A2.1 - Rutinas, Gustos y Actividades Habituales</h2>
+<h3>Objetivos de la semana</h3>
+<ul>
+<li>Describir rutinas diarias y semanales</li>
+<li>Expresar gustos, preferencias y opiniones</li>
+<li>Usar correctamente el pretérito perfecto simple</li>
+<li>Hablar de acciones pasadas recientes</li>
+<li>Comprender y usar expresiones de frecuencia</li>
+</ul>
+<h3>Contenido Gramatical</h3>
+<h4>1. Pretérito Perfecto Simple</h4>
+<p><strong>Verbos Regulares</strong>
+</p>
+<ul>
+<li>AR → -ó, -aste, -ó, -amos, -asteis, -aron</li>
+<li>ER/IR → -ió, -iste, -ió, -imos, -isteis, -ieron</li>
+</ul>
+<p><strong>Ejemplos:</strong>
+</p>
+<ul>
+<li>Ayer <strong>hablé</strong> con mi madre</li>
+<li>Anoche <strong>comí</strong> pizza</li>
+<li>El mes pasado <strong>viví</strong> en Barcelona</li>
+<li><strong>Estudié</strong> español el año pasado</li>
+<li><strong>Trabajé</strong> hasta tarde ayer</li>
+</ul>
+<p><strong>Verbos Irregulares Importantes</strong>
+</p>
+<ul>
+<li><strong>IR</strong>: fui, fuiste, fue, fuimos, fuisteis, fueron</li>
+<li><em>Ayer fui al supermercado</em></li>
+<li><strong>SER</strong>: fui, fuiste, fue, fuimos, fuisteis, fueron</li>
+<li><em>Fue una buena película</em></li>
+<li><strong>TENER</strong>: tuve, tuviste, tuvo, tuvimos, tuvisteis, tuvieron</li>
+<li><em>Tuve una reunión importante</em></li>
+<li><strong>ESTAR</strong>: estuve, estuviste, estuvo, estuvimos, estuvisteis, estuvieron</li>
+<li><em>Estuve enfermo la semana pasada</em></li>
+<li><strong>HACER</strong>: hice, hiciste, hizo, hicimos, hicisteis, hicieron</li>
+<li><em>Hice la tarea ayer</em></li>
+<li><strong>DECIR</strong>: dije, dijiste, dijo, dijimos, dijisteis, dijeron</li>
+<li><em>Dije la verdad</em></li>
+<li><strong>PODER</strong>: pude, pudiste, pudo, pudimos, pudisteis, pudieron</li>
+<li><em>No pude ir a la fiesta</em></li>
+<li><strong>QUERER</strong>: quise, quisiste, quiso, quisimos, quisisteis, quisieron</li>
+<li><em>Quise comprar ese libro</em></li>
+</ul>
+<h4>2. Verbos Reflexivos</h4>
+<p><strong>Uso básico</strong>: El sujeto realiza y recibe la acción
+</p>
+<p><strong>Conjugación Presente</strong> (lavarse)
+</p>
+<ul>
+<li>me lavo, te lavas, se lava, nos lavamos, os laváis, se lavan</li>
+</ul>
+<p><strong>Verbos reflexivos comunes:</strong>
+</p>
+<ul>
+<li><strong>levantarse</strong> - me levanto a las 7:00</li>
+<li><strong>ducharse</strong> - me ducho por la mañana</li>
+<li><strong>vestirse</strong> - me visto rápidamente</li>
+<li><strong>desayunar</strong> - desayuno pan con mantequilla</li>
+<li><strong>irse</strong> - me voy del trabajo a las 6:00</li>
+<li><strong>acostarse</strong> - me acuesto a las 11:00</li>
+<li><strong>despertarse</strong> - me despierto con la alarma</li>
+<li><strong>cepillarse</strong> - me cepillo los dientes</li>
+</ul>
+<h4>3. Expresar Gustos y Preferencias</h4>
+<p><strong>GUSTAR</strong> (y verbos similares)
+</p>
+<ul>
+<li><strong>Me gusta</strong> el español</li>
+<li><strong>Te gustan</strong> las películas</li>
+<li><strong>Le gusta</strong> la música española</li>
+<li><strong>Nos gusta</strong> viajar</li>
+<li><strong>Os gusta</strong> el chocolate</li>
+<li><strong>Les gusta</strong> leer</li>
+</ul>
+<p><strong>Otros verbos similares:</strong>
+</p>
+<ul>
+<li><strong>encantar</strong> - Me encanta la comida española</li>
+<li><strong>fascinar</strong> - Le fascina la historia</li>
+<li><strong>interesar</strong> - Me interesa el arte</li>
+<li><strong>molestar</strong> - Me molesta el ruido</li>
+<li><strong>preocupar</strong> - Le preocupa el examen</li>
+<li><strong>importar</strong> - No me importa el precio</li>
+</ul>
+<h4>4. Expresiones de Frecuencia</h4>
+<p><strong>Adverbios:</strong>
+</p>
+<ul>
+<li>siempre - always</li>
+<li>casi siempre - almost always</li>
+<li>frecuentemente - frequently</li>
+<li>a menudo - often</li>
+<li>generalmente - generally</li>
+<li>a veces - sometimes</li>
+<li>ocasionalmente - occasionally</li>
+<li>raramente - rarely</li>
+<li>nunca - never</li>
+</ul>
+<p><strong>Expresiones temporales:</strong>
+</p>
+<ul>
+<li>todos los días - every day</li>
+<li>una vez al día - once a day</li>
+<li>dos veces por semana - twice a week</li>
+<li>los fines de semana - on weekends</li>
+<li>por la mañana/mañana - in the morning</li>
+<li>por la tarde - in the afternoon</li>
+<li>por la noche - at night</li>
+</ul>
+<h3>Vocabulario Esencial</h3>
+<h4>Rutina Diaria</h4>
+<ul>
+<li><strong>Por la mañana</strong>: despertarse, levantarse, ducharse, vestirse, desayunar, cepillarse los dientes</li>
+<li><strong>Durante el día</strong>: trabajar, estudiar, comer, almorzar, descansar</li>
+<li><strong>Por la tarde</strong>: volver a casa, hacer la compra, cocinar, ver la televisión</li>
+<li><strong>Por la noche</strong>: cenar, leer, salir con amigos, acostarse</li>
+</ul>
+<h4>Comidas y Bebidas</h4>
+<ul>
+<li>el desayuno, el almuerzo, la cena, la merienda</li>
+<li>el café, el té, el agua, el zumo</li>
+<li>el pan, los cereales, la fruta, el yogur</li>
+<li>la ensalada, la carne, el pescado, las verduras</li>
+<li>el arroz, la pasta, las legumbres</li>
+</ul>
+<h4>Compras y Lugares</h4>
+<ul>
+<li>el supermercado, el mercado, la tienda</li>
+<li>el panadero, el carnicero, el pescadero</li>
+<li>el centro comercial, la calle principal</li>
+<li>hacer la compra, pagar con tarjeta, en efectivo</li>
+</ul>
+<h4>Actividades de Tiempo Libre</h4>
+<ul>
+<li>ver la televisión, escuchar música, leer libros</li>
+<li>practicar deportes, salir con amigos, ir al cine</li>
+<li>navegar por internet, jugar videojuegos, caminar</li>
+</ul>
+<h3>Expresiones Útiles</h3>
+<h4>Hablar de Rutinas</h4>
+<ul>
+<li>Normalmente me levanto a las...</li>
+<li>Por lo general, desayuno...</li>
+<li>Después del trabajo, suelo...</li>
+<li>Los fines de semana, normalmente...</li>
+<li>¿Qué haces normalmente los...?</li>
+</ul>
+<h4>Expresar Gustos</h4>
+<ul>
+<li>Me encanta + infinitivo/nombre</li>
+<li>Me gusta mucho + infinitivo/nombre</li>
+<li>No me gusta nada + infinitivo/nombre</li>
+<li>Prefiero + infinitivo/nombre</li>
+<li>Me interesa + nombre</li>
+</ul>
+<h4>Preguntas sobre Actividades</h4>
+<ul>
+<li>¿Qué haces normalmente por la mañana?</li>
+<li>¿Cuántas veces a la semana...?</li>
+<li>¿Te gusta + infinitivo?</li>
+<li>¿Prefieres... o...?</li>
+<li>¿Qué hiciste ayer/la semana pasada?</li>
+</ul>
+<h3>Actividades Prácticas</h3>
+<h4>Diálogo 1: Rutina Diaria</h4>
+<p><strong>A:</strong> ¿Qué haces normalmente por la mañana, María?
+<br><strong>B:</strong> Bueno, me levanto a las 7:00, me ducho y desayuno. ¿Y tú?
+<br><strong>A:</strong> Yo me levanto más tarde, a las 8:00. No me gusta madrugar.
+<br><strong>B:</strong> ¿A qué hora tienes que estar en la universidad?
+<br><strong>A:</strong> A las 9:30, así que tengo tiempo. ¿Desayunas mucho?
+<br><strong>B:</strong> Sí, me encanta desayunar bien. Siempre como café con tostadas y fruta.
+<br><strong>A:</strong> ¡Qué saludable! Yo solo tomo café y sal corriendo.
+</p>
+<h4>Diálogo 2: Gustos y Preferencias</h4>
+<p><strong>A:</strong> Li, ¿qué te gusta hacer en tu tiempo libre?
+<br><strong>B:</strong> Me gusta mucho leer y ver películas. ¿Y a ti?
+<br><strong>A:</strong> A mí me encanta hacer deporte. Practico tenis tres veces por semana.
+<br><strong>B:</strong> ¿En serio? Yo prefiero actividades más tranquilas.
+<br><strong>A:</strong> ¿Te gusta la música?
+<br><strong>B:</strong> Sí, me encanta la música clásica. ¿Y a ti? ¿Qué tipo de música te gusta?
+<br><strong>A</strong>: Me gusta el pop y el rock. Pero no me gusta la música clásica.
+</p>
+<h4>Diálogo 3: Actividades Pasadas</h4>
+<p><strong>A:</strong> ¿Qué hiciste el fin de semana?
+<br><strong>B:</strong> El sábado fui al mercado con mi madre. Compramos muchas verduras.
+<br><strong>A:</strong> ¿Y el domingo?
+<br><strong>B:</strong> El domingo estuve en casa. Leí un libro interesante y vi una película.
+<br><strong>A:</strong> ¿Qué película viste?
+<br><strong>B:</strong> Vi "Todo sobre mi madre". ¡Me encantó! Es una película española.
+<br><strong>A:</strong> ¡Qué bien! Yo el sábado hice deporte con amigos y el domingo preparé la comida para toda la familia.
+</p>
+<h3>Ejercicios</h3>
+<h4>Ejercicio 1: Conjugación del Pretérito Perfecto</h4>
+<p>Conjuga en pretérito perfecto:
+<br>1. Ayer yo ________ (comer) en un restaurante chino
+<br>2. Anoche ________ (ver) una película interesante
+<br>3. La semana pasada ________ (ir) a la biblioteca
+<br>4. El mes pasado ________ (estudiar) para el examen
+<br>5. El año pasado ________ (vivir) en otra ciudad
+</p>
+<h4>Ejercicio 2: Verbos Reflexivos</h4>
+<p>Completa con el pronombre correcto:
+<br>1. Yo ________ levanto a las 7:00 (levantar)
+<br>2. ¿A qué hora ________ duchas? (duchar)
+<br>3. Nosotros ________ vestimos rápidamente (vestir)
+<br>4. Ellos ________ van a las 9:00 (ir)
+<br>5. ¿________ desayunas café o té? (desayunar)
+</p>
+<h4>Ejercicio 3: Gustar y Verbos Similares</h4>
+<p>Usa la forma correcta de gustar/encantar/interesar:
+<br>1. A mí ________ mucho la comida española
+<br>2. ¿Te ________ las películas de terror?
+<br>3. A Juan ________ la historia antigua
+<br>4. Nos ________ leer libros en español
+<br>5. ¿Os ________ la música latina?
+</p>
+<h4>Ejercicio 4: Preguntas sobre Rutinas</h4>
+<p>Escribe 5 preguntas sobre la rutina diaria usando:
+</p>
+<ul>
+<li>¿Qué haces normalmente...?</li>
+<li>¿Cuántas veces...?</li>
+<li>¿A qué hora...?</li>
+<li>¿Te gusta...?</li>
+</ul>
+<h3>Tarea para la Semana</h3>
+<p>1. Escribe un diario de tu rutina diaria (100 palabras)
+<br>2. Prepara una presentación sobre tus aficiones favoritas
+<br>3. Ve una película o serie en español y resume el argumento
+<br>4. Grábate hablando sobre lo que hiciste el fin de semana pasado
+<br>5. Aprende 25 verbos nuevos y sus conjugaciones
+</p>
+<h3>Recursos Online</h3>
+<ul>
+<li><strong>Videos</strong>: Rutinas diarias en España</li>
+<li><strong>Audio</strong>: Conversaciones sobre gustos y preferencias</li>
+<li><strong>Ejercicios</strong>: Práctica con verbos reflexivos</li>
+<li><strong>Cultura</strong>: Hábitos y costumbres en países hispanohablantes</li>
+</ul>
+<h3>Evaluación de la Semana</h3>
+<ul>
+<li>Participación en discusiones (25%)</li>
+<li>Presentación oral de rutinas (35%)</li>
+<li>Ejercicios escritos de gramática (25%)</li>
+<li>Diario personal (15%)</li>
+</ul>
+<hr>
+<p><strong>Próxima semana</strong>: Experiencias personales - Narrar eventos pasados y planes futuros.
+</p>
+    </div>
+</body>
+</html>

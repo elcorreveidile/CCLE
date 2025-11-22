@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Dashboard - Intensivo 3 | CLM-UGR</title>
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23C1272D'/><text x='50' y='70' font-size='60' font-weight='bold' text-anchor='middle' fill='white'>I3</text></svg>">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="js/config.js"></script>
+</head>
+<body class="dashboard-page">
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>CLM-UGR</span>
+                </a>
+            </div>
+
+            <div class="user-info">
+                <div class="user-avatar">U</div>
+                <div class="user-details">
+                    <h3>Usuario</h3>
+                    <p>email@ejemplo.com</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-item">
+                    <a href="#" class="nav-link active" data-section="overview">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                    </a>
+                </div>
+
+                <!-- Professor-only menu items -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="courses">
+                        <i class="fas fa-book"></i>
+                        <span>Mis Cursos</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="students">
+                        <i class="fas fa-users"></i>
+                        <span>Estudiantes</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="attendance-qr">
+                        <i class="fas fa-qrcode"></i>
+                        <span>Control de Asistencia</span>
+                    </a>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="ai-tutor">
+                        <i class="fas fa-robot"></i>
+                        <span>Profesor Virtual</span>
+                    </a>
+                </div>
+
+                <!-- Student-only items -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="forum">
+                        <i class="fas fa-comments"></i>
+                        <span>Foro</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="resources">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Recursos</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="attendance">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Asistencia</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="progress">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Mi Progreso</span>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link" data-section="profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Perfil</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesión</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <h1>Bienvenido al Dashboard</h1>
+                <p>Gestiona tu aprendizaje y progreso en el Intensivo 3</p>
+            </header>
+
+            <!-- Content Sections -->
+            <div class="dashboard-content">
+                <!-- Overview Section -->
+                <section id="overview-section" class="content-section active">
+                    <!-- Professor-specific content (hidden by default, shown via JS) -->
+                    <div class="professor-overview-content" style="display: none;">
+                        <!-- Professor Dashboard Cards -->
+                        <div class="professor-stats-grid">
+                            <!-- Total Students Card -->
+                            <div class="professor-stat-card primary">
+                                <div class="professor-stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="professor-stat-info">
+                                    <h3>24</h3>
+                                    <p>Total Estudiantes</p>
+                                    <span class="stat-detail">3 grupos activos</span>
+                                </div>
+                            </div>
+
+                            <!-- Today's Classes Card -->
+                            <div class="professor-stat-card success">
+                                <div class="professor-stat-icon">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <div class="professor-stat-info">
+                                    <h3>2</h3>
+                                    <p>Clases Hoy</p>
+                                    <span class="stat-detail">10:00 y 15:30</span>
+                                </div>
+                            </div>
+
+                            <!-- Pending Reviews Card -->
+                            <div class="professor-stat-card warning">
+                                <div class="professor-stat-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div class="professor-stat-info">
+                                    <h3>8</h3>
+                                    <p>Revisiones Pendientes</p>
+                                    <span class="stat-detail">5 tareas nuevas</span>
+                                </div>
+                            </div>
+
+                            <!-- Attendance Rate Card -->
+                            <div class="professor-stat-card info">
+                                <div class="professor-stat-icon">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div class="professor-stat-info">
+                                    <h3>92%</h3>
+                                    <p>Tasa Asistencia</p>
+                                    <span class="stat-detail">Esta semana</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions Section -->
+                        <div class="professor-quick-actions">
+                            <h3>Acciones Rápidas</h3>
+                            <div class="actions-grid">
+                                <button class="action-btn" onclick="showSection('attendance-qr')">
+                                    <i class="fas fa-qrcode"></i>
+                                    <span>Generar QR Asistencia</span>
+                                </button>
+                                <button class="action-btn" onclick="showSection('students')">
+                                    <i class="fas fa-users"></i>
+                                    <span>Ver Estudiantes</span>
+                                </button>
+                                <button class="action-btn" onclick="showSection('courses')">
+                                    <i class="fas fa-book"></i>
+                                    <span>Gestionar Cursos</span>
+                                </button>
+                                <button class="action-btn" onclick="showSection('ai-tutor')">
+                                    <i class="fas fa-robot"></i>
+                                    <span>Consultar IA</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student-specific content (default) -->
+                    <div class="student-overview-content">
+                        <!-- Stats Cards -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon primary">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>0</h3>
+                                    <p>Clases Asistidas</p>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon success">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>0</h3>
+                                    <p>Participaciones en Foro</p>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon info">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>0</h3>
+                                    <p>Consultas al Profesor Virtual</p>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon warning">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>75%</h3>
+                                    <p>Progreso Global</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Student Quick Actions -->
+                        <div class="quick-actions">
+                            <h3>Acciones Rápidas</h3>
+                            <div class="actions-grid">
+                                <button class="action-btn" onclick="showSection('ai-tutor')">
+                                    <i class="fas fa-robot"></i>
+                                    <span>Consultar Profesor Virtual</span>
+                                </button>
+                                <button class="action-btn" onclick="showSection('attendance')">
+                                    <i class="fas fa-qrcode"></i>
+                                    <span>Fichar Asistencia</span>
+                                </button>
+                                <button class="action-btn" onclick="showSection('resources')">
+                                    <i class="fas fa-download"></i>
+                                    <span>Descargar Materiales</span>
+                                </button>
+                                <button class="action-btn" onclick="showSection('forum')">
+                                    <i class="fas fa-comment-dots"></i>
+                                    <span>Ir al Foro</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Current Projects -->
+                    <div class="projects-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-project-diagram"></i>
+                            Proyectos Actuales
+                        </h2>
+
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3>Ruta de Tapas por Granada</h3>
+                                    <span class="project-badge in-progress">En Progreso</span>
+                                </div>
+                                <p>Explora la gastronomía local y crea tu propia ruta de tapas por Granada</p>
+                                <div class="project-progress">
+                                    <div class="progress-label">
+                                        <span>Progreso</span>
+                                        <strong>45%</strong>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <a href="https://detapasporgranada.wordpress.com" target="_blank" class="project-link">
+                                    Ver Proyecto <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3>Serie: Para Mudarse a España</h3>
+                                    <span class="project-badge">Próximamente</span>
+                                </div>
+                                <p>Crea un episodio sobre algún aspecto importante de mudarse a España</p>
+                                <div class="project-progress">
+                                    <div class="progress-label">
+                                        <span>Progreso</span>
+                                        <strong>0%</strong>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <a href="#resources" class="project-link" data-section="resources">
+                                    Ver Recursos <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI Tutor Section -->
+                <section id="ai-tutor-section" class="content-section">
+                    <div class="section-header">
+                        <h1><i class="fas fa-robot"></i> Profesor Virtual</h1>
+                        <p>Asistente con IA para resolver tus dudas de español 24/7</p>
+                    </div>
+
+                    <div class="ai-tutor-container">
+                        <div class="chat-container">
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="chat-message bot">
+                                    <div class="message-avatar">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="message-content">
+                                        <p>¡Hola! Soy tu Profesor Virtual. Puedo ayudarte con:</p>
+                                        <ul>
+                                            <li>Gramática española (verbos, tiempos, etc.)</li>
+                                            <li>Vocabulario y expresiones</li>
+                                            <li>Dudas sobre los proyectos</li>
+                                            <li>Práctica de conversación</li>
+                                            <li>Corrección de textos</li>
+                                        </ul>
+                                        <p>¿En qué puedo ayudarte hoy?</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chat-input-container">
+                                <textarea id="chatInput" placeholder="Escribe tu pregunta aquí..." rows="2"></textarea>
+                                <button class="btn btn-primary" id="sendChatBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="ai-sidebar">
+                            <h3>Sugerencias de Temas</h3>
+                            <div class="topic-suggestions">
+                                <button class="topic-btn" onclick="askAI('¿Cómo uso el pretérito perfecto?')">
+                                    Pretérito Perfecto
+                                </button>
+                                <button class="topic-btn" onclick="askAI('¿Cuál es la diferencia entre ser y estar?')">
+                                    Ser vs Estar
+                                </button>
+                                <button class="topic-btn" onclick="askAI('¿Cómo pido comida en un bar?')">
+                                    Pedir en un Bar
+                                </button>
+                                <button class="topic-btn" onclick="askAI('¿Qué vocabulario necesito para el proyecto de tapas?')">
+                                    Vocabulario Tapas
+                                </button>
+                            </div>
+
+                            <div class="ai-stats">
+                                <h4>Tu Actividad</h4>
+                                <p><i class="fas fa-comments"></i> <span id="totalChats">0</span> conversaciones</p>
+                                <p><i class="fas fa-clock"></i> Última consulta: <span id="lastChat">Nunca</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Forum Section -->
+                <section id="forum-section" class="content-section">
+                    <div class="section-header">
+                        <h1><i class="fas fa-comments"></i> Foro de Comunicación</h1>
+                        <p>Comparte ideas y colabora con tus compañeros</p>
+                        <button class="btn btn-primary" id="newPostBtn">
+                            <i class="fas fa-plus"></i> Nueva Publicación
+                        </button>
+                    </div>
+
+                    <div class="forum-container">
+                        <div class="forum-categories">
+                            <button class="category-btn active" data-category="all">
+                                <i class="fas fa-th"></i> Todos
+                            </button>
+                            <button class="category-btn" data-category="proyecto1">
+                                <i class="fas fa-utensils"></i> Ruta de Tapas
+                            </button>
+                            <button class="category-btn" data-category="proyecto2">
+                                <i class="fas fa-video"></i> Serie
+                            </button>
+                            <button class="category-btn" data-category="general">
+                                <i class="fas fa-comment"></i> General
+                            </button>
+                            <button class="category-btn" data-category="dudas">
+                                <i class="fas fa-question-circle"></i> Dudas
+                            </button>
+                        </div>
+
+                        <div class="forum-posts" id="forumPosts">
+                            <!-- Posts will be loaded dynamically -->
+                            <div class="empty-state">
+                                <i class="fas fa-comments"></i>
+                                <h3>No hay publicaciones aún</h3>
+                                <p>Sé el primero en iniciar una conversación</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resources Section -->
+                <section id="resources-section" class="content-section">
+                    <div class="section-header">
+                        <h1><i class="fas fa-folder-open"></i> Recursos y Materiales</h1>
+                        <p>Accede a todos los materiales del curso</p>
+                    </div>
+
+                    <div class="resources-grid" id="resourcesGrid">
+                        <!-- Resources will be loaded dynamically -->
+                    </div>
+                </section>
+
+                <!-- Attendance Section -->
+                <section id="attendance-section" class="content-section">
+                    <div class="section-header">
+                        <h1><i class="fas fa-calendar-check"></i> Control de Asistencia</h1>
+                        <p>Registra tu asistencia y consulta tu historial</p>
+                    </div>
+
+                    <div class="attendance-container">
+                        <div class="attendance-checkin">
+                            <div class="checkin-card">
+                                <div class="qr-scanner">
+                                    <i class="fas fa-qrcode"></i>
+                                    <h3>Escanear Código QR</h3>
+                                    <p>Escanea el código QR del aula para registrar tu asistencia</p>
+                                    <a href="attendance.html" class="btn btn-primary btn-lg" id="scanQRBtn">
+                                        <i class="fas fa-camera"></i> Escanear QR
+                                    </a>
+                                </div>
+                                <div class="manual-entry">
+                                    <i class="fas fa-keyboard"></i>
+                                    <h3>Código Manual</h3>
+                                    <p>Ingresa el código de asistencia manualmente si no puedes escanear</p>
+                                    <a href="attendance.html" class="btn btn-secondary">
+                                        <i class="fas fa-edit"></i> Ingresar Código
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="attendance-history">
+                            <h3>Historial de Asistencia</h3>
+                            <div class="attendance-calendar" id="attendanceCalendar">
+                                <!-- Calendar will be rendered here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Progress Section -->
+                <section id="progress-section" class="content-section">
+                    <div class="progress-container">
+                        <h2 class="section-title">
+                            <i class="fas fa-chart-line"></i>
+                            Mi Progreso
+                        </h2>
+
+                        <!-- Progress Overview -->
+                        <div class="progress-overview">
+                            <div class="circular-progress" id="overall-progress">
+                                <div class="progress-ring">
+                                    <svg width="150" height="150">
+                                        <circle class="progress-ring-circle-bg" cx="75" cy="75" r="60"></circle>
+                                        <circle class="progress-ring-circle" cx="75" cy="75" r="60"
+                                                stroke-dasharray="376.99" stroke-dashoffset="94.25"></circle>
+                                    </svg>
+                                    <div class="progress-value">75%</div>
+                                </div>
+                                <h3>Progreso General</h3>
+                                <p>Avance total del curso</p>
+                            </div>
+
+                            <div class="circular-progress" id="project1-progress">
+                                <div class="progress-ring">
+                                    <svg width="150" height="150">
+                                        <circle class="progress-ring-circle-bg" cx="75" cy="75" r="60"></circle>
+                                        <circle class="progress-ring-circle" cx="75" cy="75" r="60"
+                                                stroke-dasharray="376.99" stroke-dashoffset="75.40"></circle>
+                                    </svg>
+                                    <div class="progress-value">80%</div>
+                                </div>
+                                <h3>Ruta de Tapas</h3>
+                                <p>Proyecto 1</p>
+                            </div>
+
+                            <div class="circular-progress" id="project2-progress">
+                                <div class="progress-ring">
+                                    <svg width="150" height="150">
+                                        <circle class="progress-ring-circle-bg" cx="75" cy="75" r="60"></circle>
+                                        <circle class="progress-ring-circle" cx="75" cy="75" r="60"
+                                                stroke-dasharray="376.99" stroke-dashoffset="131.95"></circle>
+                                    </svg>
+                                    <div class="progress-value">65%</div>
+                                </div>
+                                <h3>Serie España</h3>
+                                <p>Proyecto 2</p>
+                            </div>
+                        </div>
+
+                        <!-- Skills Section -->
+                        <div class="skills-section">
+                            <h2 class="section-title">
+                                <i class="fas fa-star"></i>
+                                Habilidades
+                            </h2>
+
+                            <div class="skill-item" id="skill-conversacion">
+                                <div class="skill-header">
+                                    <span class="skill-name">Conversación</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item" id="skill-gramatica">
+                                <div class="skill-header">
+                                    <span class="skill-name">Gramática</span>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item" id="skill-vocabulario">
+                                <div class="skill-header">
+                                    <span class="skill-name">Vocabulario</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item" id="skill-comprension">
+                                <div class="skill-header">
+                                    <span class="skill-name">Comprensión</span>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Section -->
+                <section id="profile-section" class="content-section">
+                    <div class="profile-container">
+                        <div class="profile-header">
+                            <div class="profile-avatar-large">U</div>
+                            <h2>Usuario</h2>
+                            <p>email@ejemplo.com</p>
+                        </div>
+
+                        <form id="profile-form" class="profile-form">
+                            <div class="form-group">
+                                <label for="profile-first-name">Nombre</label>
+                                <input type="text" id="profile-first-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-last-name">Apellidos</label>
+                                <input type="text" id="profile-last-name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-email">Email</label>
+                                <input type="email" id="profile-email" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-phone">Teléfono</label>
+                                <input type="tel" id="profile-phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-country">País</label>
+                                <input type="text" id="profile-country">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-university">Universidad</label>
+                                <input type="text" id="profile-university">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-spanish-level">Nivel de Español</label>
+                                <select id="profile-spanish-level">
+                                    <option value="A1">A1 - Principiante</option>
+                                    <option value="A2">A2 - Elemental</option>
+                                    <option value="A2.1">A2.1 - Elemental Avanzado</option>
+                                    <option value="B1">B1 - Intermedio</option>
+                                    <option value="B2">B2 - Intermedio Alto</option>
+                                    <option value="C1">C1 - Avanzado</option>
+                                    <option value="C2">C2 - Maestría</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Guardar Cambios
+                                </button>
+                            </div>
+                        </form>
+
+                            <div class="profile-section">
+                                <h3>Cambiar Contraseña</h3>
+                                <form id="passwordForm">
+                                    <div class="form-group">
+                                        <label>Contraseña Actual</label>
+                                        <input type="password" id="currentPassword" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nueva Contraseña</label>
+                                        <input type="password" id="newPassword" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Confirmar Nueva Contraseña</label>
+                                        <input type="password" id="confirmNewPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-secondary">
+                                        <i class="fas fa-key"></i> Cambiar Contraseña
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Professor Courses Section -->
+                <section id="courses-section" class="content-section" style="display: none;">
+                    <div class="section-header">
+                        <h1><i class="fas fa-book"></i> Mis Cursos</h1>
+                        <p>Gestiona tus cursos y supervisa el progreso de los estudiantes</p>
+                        <button class="btn btn-primary" id="newCourseBtn">
+                            <i class="fas fa-plus"></i> Nuevo Curso
+                        </button>
+                    </div>
+
+                    <div class="courses-container" id="professorCoursesList">
+                        <!-- Professor Dashboard Cards -->
+                        <div class="professor-stats-grid">
+                            <!-- Total Students Card -->
+                            <div class="professor-stat-card primary">
+                                <div class="professor-stat-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="professor-stat-info">
+                                    <h3>24</h3>
+                                    <p>Total Estudiantes</p>
+                                    <span class="stat-detail">3 grupos activos</span>
+                                </div>
+                            </div>
+
+                            <!-- Today's Classes Card -->
+                            <div class="professor-stat-card success">
+                                <div class="professor-stat-icon">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <div class="professor-stat-info">
+                                    <h3>2</h3>
+                                    <p>Clases Hoy</p>
+                                    <span class="stat-detail">10:00 y 15:30</span>
+                                </div>
+                            </div>
+
+                            <!-- Pending Reviews Card -->
+                            <div class="professor-stat-card warning">
+                                <div class="professor-stat-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div class="professor-stat-info">
+                                    <h3>8</h3>
+                                    <p>Revisiones Pendientes</p>
+                                    <span class="stat-detail">5 tareas nuevas</span>
+                                </div>
+                            </div>
+
+                            <!-- Attendance Rate Card -->
+                            <div class="professor-stat-card info">
+                                <div class="professor-stat-icon">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div class="professor-stat-info">
+                                    <h3>92%</h3>
+                                    <p>Tasa Asistencia</p>
+                                    <span class="stat-detail">Esta semana</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions Section -->
+                        <div class="professor-quick-actions">
+                            <h3>Acciones Rápidas</h3>
+                            <div class="actions-grid">
+                                <button class="action-btn" onclick="showSection('attendance-qr')">
+                                    <i class="fas fa-qrcode"></i>
+                                    <span>Generar QR Asistencia</span>
+                                </button>
+                                <button class="action-btn" onclick="showSection('students')">
+                                    <i class="fas fa-users"></i>
+                                    <span>Ver Estudiantes</span>
+                                </button>
+                                <button class="action-btn" onclick="showSection('ai-tutor')">
+                                    <i class="fas fa-robot"></i>
+                                    <span>Consultar IA</span>
+                                </button>
+                                <button class="action-btn" onclick="window.open('#', '_blank')">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Calendario</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="professor-recent-activity">
+                            <h3>Actividad Reciente</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon success">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p class="activity-text">Nueva tarea entregada por <strong>María García</strong></p>
+                                        <span class="activity-time">Hace 5 minutos</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon info">
+                                        <i class="fas fa-question-circle"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p class="activity-text"><strong>Juan López</strong> solicitó ayuda en el foro</p>
+                                        <span class="activity-time">Hace 23 minutos</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon warning">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p class="activity-text">3 estudiantes faltaron a la clase de hoy</p>
+                                        <span class="activity-time">Hace 1 hora</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Students Section -->
+                <section id="students-section" class="content-section" style="display: none;">
+                    <div class="section-header">
+                        <h1><i class="fas fa-users"></i> Estudiantes</h1>
+                        <p>Consulta el progreso y asistencia de tus estudiantes</p>
+                        <div class="filter-controls">
+                            <select id="courseFilter" class="form-control">
+                                <option value="">Todos los cursos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="students-container" id="studentsList">
+                        <!-- Students will be loaded dynamically -->
+                        <div class="loading-placeholder">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Cargando estudiantes...</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Attendance QR Section -->
+                <section id="attendance-qr-section" class="content-section" style="display: none;">
+                    <div class="section-header">
+                        <h1><i class="fas fa-qrcode"></i> Generar Código QR</h1>
+                        <p>Genera códigos QR para el control de asistencia</p>
+                    </div>
+
+                    <div class="qr-generator-container">
+                        <form id="qrGeneratorForm" class="qr-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="qrCourse">Curso</label>
+                                    <select id="qrCourse" class="form-control" required>
+                                        <option value="">Selecciona un curso</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="qrLocation">Ubicación</label>
+                                    <input type="text" id="qrLocation" class="form-control"
+                                           placeholder="Ej: Aula 101" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="qrDuration">Duración (minutos)</label>
+                                    <select id="qrDuration" class="form-control" required>
+                                        <option value="5">5 minutos</option>
+                                        <option value="10" selected>10 minutos</option>
+                                        <option value="15">15 minutos</option>
+                                        <option value="30">30 minutos</option>
+                                        <option value="60">1 hora</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="qrType">Tipo</label>
+                                    <select id="qrType" class="form-control" required>
+                                        <option value="session">Sesión de clase</option>
+                                        <option value="exam">Examen</option>
+                                        <option value="activity">Actividad especial</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-qrcode"></i> Generar Código QR
+                            </button>
+                        </form>
+
+                        <div id="qrResult" class="qr-result" style="display: none;">
+                            <h3>Código QR Generado</h3>
+                            <div id="qrCodeDisplay" class="qr-display"></div>
+                            <div class="qr-info">
+                                <p><strong>Código:</strong> <span id="qrCode"></span></p>
+                                <p><strong>Expira:</strong> <span id="qrExpiry"></span></p>
+                                <p><strong>Estado:</strong> <span class="status-active">Activo</span></p>
+                            </div>
+                            <div class="qr-actions">
+                                <button class="btn btn-secondary" onclick="printQR()">
+                                    <i class="fas fa-print"></i> Imprimir
+                                </button>
+                                <button class="btn btn-info" onclick="downloadQR()">
+                                    <i class="fas fa-download"></i> Descargar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- New Post Modal -->
+    <div id="newPostModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nueva Publicación</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="newPostForm">
+                <div class="form-group">
+                    <label>Título</label>
+                    <input type="text" id="postTitle" required>
+                </div>
+                <div class="form-group">
+                    <label>Categoría</label>
+                    <select id="postCategory" required>
+                        <option value="general">General</option>
+                        <option value="proyecto1">Ruta de Tapas</option>
+                        <option value="proyecto2">Serie</option>
+                        <option value="dudas">Dudas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Contenido</label>
+                    <textarea id="postContent" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Publicar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
