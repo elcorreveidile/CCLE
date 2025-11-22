@@ -33,7 +33,6 @@ app.use(express.static(path.join(__dirname, '../')));
 
 // Rutas
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/ccl', require('./routes/ccl'));
 
 // Ruta de bienvenida
 app.get('/api', (req, res) => {
@@ -48,10 +47,6 @@ app.get('/api', (req, res) => {
                 me: 'GET /api/auth/me (protected)',
                 updateProfile: 'PUT /api/auth/profile (protected)',
                 changePassword: 'PUT /api/auth/change-password (protected)'
-            },
-            ccl: {
-                analizar: 'POST /api/ccl/analizar (protected)',
-                historial: 'GET /api/ccl/historial (protected)'
             }
         }
     });
